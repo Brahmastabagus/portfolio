@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { MapPin, Briefcase, Copy, Check, ExternalLink } from "lucide-react";
+import { MapPin, Copy, Check, ExternalLink } from "lucide-react";
 
 // Public email can be updated when provided by user
 const PUBLIC_EMAIL = "brahmastabagus@gmail.com";
