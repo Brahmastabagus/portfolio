@@ -2,6 +2,8 @@ import { Hero } from "@/components/hero";
 import { QuickOverview } from "@/components/quick-overview";
 import { About } from "@/components/about";
 import { Skills } from "@/components/skills";
+import { Experience } from "@/components/experience";
+import { Education } from "@/components/education";
 
 export default function HomePage() {
   return (
@@ -10,7 +12,9 @@ export default function HomePage() {
       <QuickOverview />
       <About />
       <Skills />
-      {/* Subsequent sections: Experience, Education, Projects, Certifications, Contact */}
+      <Experience />
+      <Education />
+      {/* Subsequent sections: Projects, Certifications, Contact */}
     </main>
   );
 }

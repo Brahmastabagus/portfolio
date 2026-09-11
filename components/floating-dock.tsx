@@ -127,7 +127,7 @@ function DockItem({
 }
 
 function subscribeTouch(callback: () => void) {
-  if (typeof window === "undefined") return () => {};
+  if (typeof window === "undefined") return () => { };
   const query = window.matchMedia("(pointer: coarse)");
   query.addEventListener("change", callback);
   return () => query.removeEventListener("change", callback);
