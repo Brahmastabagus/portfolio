@@ -99,11 +99,16 @@ function DockItem({
         onClick={(e) => {
           if (href.startsWith("#")) {
             e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-              target.scrollIntoView({ behavior: "smooth" });
-            } else if (href === "#hero") {
+            if (href === "#hero") {
               window.scrollTo({ top: 0, behavior: "smooth" });
+            } else {
+              const target = document.querySelector(href);
+              if (target) {
+                // Precise alignment: section starts cleanly 24px from top of viewport
+                const targetTop =
+                  target.getBoundingClientRect().top + window.scrollY - 24;
+                window.scrollTo({ top: targetTop, behavior: "smooth" });
+              }
             }
           }
           if (onClick) onClick();
