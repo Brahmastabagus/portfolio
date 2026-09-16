@@ -150,7 +150,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="flex flex-col gap-6 scroll-mt-24"
+      className="flex flex-col gap-6 scroll-mt-6"
       aria-label="Work Experience"
     >
       <div className="flex flex-col gap-1 border-b border-border/60 pb-3">

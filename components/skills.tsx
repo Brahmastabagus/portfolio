@@ -61,7 +61,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
 
 export function Skills() {
   return (
-    <section id="skills" className="flex flex-col gap-6 scroll-mt-24" aria-label="Skills and Technologies">
+    <section id="skills" className="flex flex-col gap-6 scroll-mt-6" aria-label="Skills and Technologies">
       <div className="flex flex-col gap-1 border-b border-border/60 pb-3">
         <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
           Skills & Technologies

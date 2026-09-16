@@ -56,7 +56,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="flex flex-col gap-8 scroll-mt-24" aria-label="About Me">
+    <section id="about" className="flex flex-col gap-8 scroll-mt-6" aria-label="About Me">
       <div className="flex flex-col gap-1 border-b border-border/60 pb-3">
         <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
           About
