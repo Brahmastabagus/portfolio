@@ -51,8 +51,8 @@
   - Professional: Brofesional User App (React 17, MUI v5), Brofesional Dashboard (React, Reactstrap), Drinktohappy (Enternica, Warung Bibit, PT Safari)
   - Bootcamp: Binar Academy (React, Redux Toolkit, Vite, PrimeReact)
   - Project: desa-melung (Vite + Tailwind), user-management-dashboard, TerbangIn (PrimeReact), Weddingly, Binar-lms-fe
-  - Internship: Semarang Technopark (React Context), Weddingly
-- **Context:** Component architecture, hooks, context, performance optimization. React 17 at Brofesional.
+  - Internship: Semarang Technopark (React 18, CRA), Weddingly
+- **Context:** Component architecture, hooks, context, performance optimization. React 17 at Brofesional, React 18 at Semarang Technopark/user-management-dashboard.
 - **Depth:** PROFESSIONAL — 1+ year production, multiple codebases
 
 ### Next.js
@@ -66,7 +66,7 @@
 - **Evidence:**
   - Professional: Brofesional User App (state management)
   - Bootcamp: Binar Academy (Redux Toolkit with TypeScript)
-  - Project: user-management-dashboard, Weddingly, Binar-lms-fe
+  - Project: user-management-dashboard, Weddingly, Binar-lms-fe, TerbangIn, desa-melung
   - Internship: Weddingly (Redux)
 - **Context:** createSlice, RTK Query basics, middleware, dev tools.
 - **Depth:** PROFESSIONAL — production state management
@@ -74,14 +74,14 @@
 ### React Context
 - **Evidence:**
   - Internship: Semarang Technopark
-  - Project: Various smaller projects
+  - Project: Various smaller projects, TerbangIn (legacy Redux Thunk + Context)
 - **Context:** Lightweight state management alternative to Redux.
 - **Depth:** PROJECT — used in internship project
 
 ### React Router (v6)
 - **Evidence:**
   - Professional: Brofesional User App
-  - Project: user-management-dashboard, TerbangIn, desa-melung
+  - Project: user-management-dashboard, TerbangIn, desa-melung, Weddingly, Semarang Technopark
 - **Context:** Declarative routing, nested routes, route protection.
 - **Depth:** PROFESSIONAL — production routing
 
@@ -116,9 +116,10 @@
 ### DaisyUI
 - **Evidence:**
   - CV (Complete variant): listed as Advanced
-  - Project: Limited visibility in portfolio, no confirmed usage in professional projects (Brofesional, Drinktohappy), internship, or bootcamp projects
-- **Context:** Component library on top of Tailwind. Listed in one CV variant but no verifiable project usage found.
-- **Depth:** NEEDS ASSESSMENT — listed in CV but no project evidence to confirm proficiency
+  - Professional: Semarang Technopark (internship), Weddingly (internship)
+  - Project: Limited visibility in portfolio, no confirmed usage in professional projects (Brofesional, Drinktohappy) or bootcamp projects
+- **Context:** Component library on top of Tailwind. Used in internship projects (Semarang Technopark, Weddingly).
+- **Depth:** PROJECT — verified in internship projects
 
 ### RSuiteJS
 - **Evidence:**
@@ -172,7 +173,7 @@
 - **Evidence:**
   - Professional: Brofesional (push notifications, client-side features)
   - Project: Limited
-- **Context:** FCM push notifications, Google Picker integration.
+- **Context:** FCM push notifications, client-side Firebase features.
 - **Depth:** PROJECT — specific feature usage only
 
 ---
@@ -255,6 +256,186 @@
 
 ---
 
+## Frontend / UI Competencies (New & Enriched)
+
+### Client-side Image Optimization
+- **Evidence:**
+  - Professional: Brofesional Dashboard — browser-image-compression
+  - Professional: Brofesional User App — react-lazy-load-image-component, react-intersection-observer (via Enternica stack)
+- **Context:** Client-side image compression before upload to reduce payload size and bandwidth. IntersectionObserver-based lazy loading.
+- **Depth:** PROFESSIONAL
+
+### Rich Text Editing
+- **Evidence:**
+  - Professional: Brofesional Dashboard — React Quill, quill-emoji, quill-image-resize-module-react
+  - Professional: Enternica — React Quill
+- **Context:** Rich-text content editing, emoji support, image resizing within editor.
+- **Depth:** PROFESSIONAL
+
+### File Upload / Drag-and-Drop Upload
+- **Evidence:**
+  - Professional: Brofesional Dashboard — react-dropzone-uploader
+- **Context:** Drag-and-drop file upload with progress, preview, and validation.
+- **Depth:** PROFESSIONAL
+
+### Drag-and-Drop Interaction
+- **Evidence:**
+  - Professional: Enternica — react-dnd, HTML5 backend, touch backend
+  - Professional: Brofesional — @dnd-kit (interactive question engine)
+- **Context:** Drag-and-drop interaction with desktop and touch support for interactive UI.
+- **Depth:** PROFESSIONAL
+
+### Media / Audio Integration
+- **Evidence:**
+  - Professional: Brofesional User App — react-audio-player
+- **Context:** Audio playback controls, streaming support in user-facing features.
+- **Depth:** PROFESSIONAL
+
+### Video / YouTube Integration
+- **Evidence:**
+  - Professional: Brofesional User App — video.js, videojs-youtube
+- **Context:** Video playback with YouTube embed support, custom controls, adaptive streaming.
+- **Depth:** PROFESSIONAL
+
+### Carousel / Slider Interfaces
+- **Evidence:**
+  - Professional: Brofesional User App — swiper
+  - Professional: Enternica — react-slick, slick-carousel (supporting)
+- **Context:** Touch-enabled carousels, autoplay, lazy loading, responsive breakpoints.
+- **Depth:** PROFESSIONAL
+
+### Animation / Motion UI
+- **Evidence:**
+  - Professional: Brofesional User App — react-confetti
+  - Professional: Enternica — framer-motion
+- **Context:** Celebration animations, micro-interactions, page transitions, gesture-based animations.
+- **Depth:** PROFESSIONAL
+
+### Lazy Image Loading
+- **Evidence:**
+  - Professional: Brofesional User App — react-lazy-load-image-component
+  - Professional: Enternica — react-lazy-load-image-component, react-intersection-observer
+- **Context:** IntersectionObserver-based lazy loading, blur-up placeholders, performance optimization.
+- **Depth:** PROFESSIONAL
+
+### Digital Signature Capture
+- **Evidence:**
+  - Professional: Enternica — react-signature-canvas
+- **Context:** Canvas-based signature capture for contracts, approvals, and forms.
+- **Depth:** PROFESSIONAL
+
+### Avatar / Image Editing
+- **Evidence:**
+  - Professional: Enternica — react-avatar-editor
+- **Context:** Client-side avatar cropping, zooming, rotation before upload.
+- **Depth:** PROFESSIONAL
+
+### Advanced Form/Input Integration
+- **Evidence:**
+  - Professional: Brofesional User App — react-pin-input
+  - Professional: Enternica — @headlessui/react, @preline/strong-password, react-phone-input-2, react-quill
+- **Context:** PIN input, accessible combobox/select, password strength meter, international phone input, rich text.
+- **Depth:** PROFESSIONAL
+
+### Date & Timezone Handling
+- **Evidence:**
+  - Professional: Brofesional Dashboard — moment, moment-timezone
+  - Professional: Enternica — dayjs
+- **Context:** Timezone-aware date formatting, parsing, manipulation, relative time display.
+- **Depth:** PROFESSIONAL
+
+---
+
+## Security / Application Integration Competencies (New & Enriched)
+
+### Frontend Content Sanitization / XSS Prevention
+- **Evidence:**
+  - Professional: Enternica — dompurify
+- **Context:** Sanitizing user-generated HTML content before rendering to prevent XSS attacks.
+- **Depth:** PROFESSIONAL
+
+### Google reCAPTCHA Integration
+- **Evidence:**
+  - Professional: Brofesional Dashboard — react-google-recaptcha
+- **Context:** Bot protection on forms, invisible and checkbox reCAPTCHA v2/v3.
+- **Depth:** PROFESSIONAL
+
+### JWT / Client Authentication Handling
+- **Evidence:**
+  - Professional: Enternica — jwt-decode
+- **Context:** Client-side JWT decoding, token payload inspection, auth state management.
+- **Depth:** PROFESSIONAL
+
+### Cookie / Session Handling
+- **Evidence:**
+  - Professional: Enternica — universal-cookie
+- **Context:** Cross-browser cookie management, SSR-compatible cookie parsing, session persistence.
+- **Depth:** PROFESSIONAL
+
+### Google API Integration
+- **Evidence:**
+  - Professional: Brofesional Dashboard — gapi-script
+- **Context:** Google Picker API, Google Drive integration, OAuth flow via gapi client.
+- **Depth:** PROFESSIONAL
+
+---
+
+## Backend Competencies (New & Enriched — PROJECT Depth)
+
+> Note: Backend experience from Desa Melung & Baturraden is PROJECT/ACADEMIC — not a professional backend role. Depth reflects this.
+
+### Authentication & Authorization
+- **Evidence:**
+  - Project/Academic: Desa Melung BE & Baturraden BE — bcrypt, jsonwebtoken, Express
+- **Context:** Password hashing and token-based authentication in REST APIs.
+- **Depth:** PROJECT
+
+### Password Hashing
+- **Evidence:**
+  - Project/Academic: Desa Melung BE & Baturraden BE — bcrypt
+- **Context:** Secure password storage with bcrypt salting and hashing.
+- **Depth:** PROJECT
+
+### Server-side Validation
+- **Evidence:**
+  - Project/Academic: Desa Melung BE & Baturraden BE — joi
+- **Context:** Request body, query, and params validation with schema-based validation.
+- **Depth:** PROJECT
+
+### File Upload Handling
+- **Evidence:**
+  - Project/Academic: Desa Melung BE & Baturraden BE — multer
+- **Context:** Multipart form handling, file type validation, size limits, disk/storage configuration.
+- **Depth:** PROJECT
+
+### Image/File Hosting Integration
+- **Evidence:**
+  - Project/Academic: Desa Melung BE & Baturraden BE — imagekit
+  - Bootcamp: Binar Academy — ImageKit
+- **Context:** Cloud image storage, transformation, optimization, CDN delivery via ImageKit.
+- **Depth:** PROJECT
+
+### Email Integration
+- **Evidence:**
+  - Project/Academic: Desa Melung BE & Baturraden BE — nodemailer
+- **Context:** Transactional email sending (SMTP), templated emails, verification, password reset.
+- **Depth:** PROJECT
+
+### Payment Gateway Integration
+- **Evidence:**
+  - Project/Academic: Desa Melung BE & Baturraden BE — midtrans-client
+- **Context:** Midtrans Snap/Callback integration, payment notification handling, transaction status.
+- **Depth:** PROJECT
+
+### API Documentation
+- **Evidence:**
+  - Project/Academic: Desa Melung BE & Baturraden BE — swagger-ui-express
+  - Bootcamp: Binar Academy — Swagger
+- **Context:** OpenAPI/Swagger documentation generation, interactive API explorer.
+- **Depth:** PROJECT
+
+---
+
 ## Engineering Concepts
 
 ### Component Architecture
@@ -325,6 +506,9 @@
 | Testing | Manual QA | — | — | React Testing Library |
 | Cloud | — | — | — | AWS (cert-based knowledge only) |
 | Engineering | Component Arch, Perf Opt, REST API | — | — | System Design (learning) |
+| **Frontend/UI Competencies** | **Client-side Image Opt, Rich Text, File Upload, Drag-Drop, Media/Audio, Video, Carousel, Animation, Lazy Loading, Digital Signature, Avatar Editing, Advanced Forms, Date/Timezone** | | | |
+| **Security/App Integration** | **Content Sanitization, reCAPTCHA, JWT Client, Cookie Handling, Google API** | | | |
+|| **Backend Competencies** | | **Auth, Password Hashing, Validation, File Upload, Image Hosting, Email, Payment, API Docs** | | |
 
 ---
 
@@ -338,4 +522,6 @@
 6. **AWS** — Certification-based knowledge only (AWS Academy Cloud Architecting). No professional cloud usage.
 7. **System Design** — Currently learning. Some professional architectural exposure at Brofesional, but not formalized.
 8. **Next.js** — Used in one internship project (Weddingly). Not in current professional stack. Marked as INTERNSHIP PROJECT.
-9. **DaisyUI** — Listed in one CV variant (Complete) as Advanced, but no verifiable project usage. Marked as NEEDS ASSESSMENT.
+9. **DaisyUI** — Listed in one CV variant (Complete) as Advanced, but also verified in internship projects (Semarang Technopark, Weddingly). Depth updated from NEEDS ASSESSMENT to PROJECT.
+10. **Backend competencies** — All marked PROJECT depth because Desa Melung/Baturraden were thesis/final project backends, not professional backend employment. Brofesional & Drinktohappy experience is frontend-only.
+11. **Supporting technologies** (not standalone skills): dotenv, cors, morgan, slick-carousel, react-icons, immutability-helper, preline, react-toastify, universal-cookie, pg-hstore, sequelize-cli — listed as evidence within relevant competencies above.

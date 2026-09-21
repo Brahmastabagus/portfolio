@@ -9,7 +9,7 @@
 | **Current Company** | Brofesional by Youth Educational Centre |
 | **Employment Period** | March 2025 – Present |
 | **Location** | Purbalingga, Jawa Tengah, Indonesia |
-| **Work Arrangement** | On-site / Hybrid (perusahaan edutech) |
+| **Work Arrangement** | On-site (perusahaan edutech) |
 | **Professional Positioning** | Frontend Developer \| React.js, TypeScript, Redux Toolkit, Material UI v5, Tailwind CSS |
 | **Target Role (Primary)** | Frontend Developer (React.js / TypeScript) |
 | **Target Role (Secondary)** | Frontend Engineer (Architecture, Performance & Testing) |

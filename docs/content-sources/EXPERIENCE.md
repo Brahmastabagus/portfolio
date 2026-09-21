@@ -6,7 +6,7 @@
 
 **Period:** March 2025 – Present
 **Type:** Professional (Full-time)
-**Location:** Purbalingga, Indonesia (On-site/Hybrid)
+**Location:** Purbalingga, Indonesia (On-site)
 **Work Arrangement:** Edutech platform development
 
 #### Context
@@ -27,7 +27,7 @@ Brofesional is an edutech platform providing TOEFL preparation, learning materia
 2. **API Performance Optimization** — Optimized high-traffic API usage through pagination and selective response fields, cutting payload size by ~70% and eliminating browser freezes on lists of 1,000+ records
 3. **Assessment Features** — Built TOEFL tryout flows, live quizzes with answer review, AI-powered question analysis, and interactive question engine (charts, drag-and-drop, sequential/clickable formats)
 4. **Learning Features** — E-course guidelines/onboarding, assignments per class, tryout certificates, question reporting, Google Picker integration, client-side image compression, device-login limits, push notifications (Firebase)
-5. **Admin Features** — Data export (users/vouchers/schedules/tryout scores), tutor management, testimonial & FAQ management, Jobs menu, referral & coupon workflows
+5. **Admin Features** — Data export (users/vouchers/transactions/schedules/tryout scores), tutor management, testimonial & FAQ management, Jobs menu, referral & coupon workflows
 
 #### Technologies
 
@@ -68,7 +68,7 @@ Brofesional is an edutech platform providing TOEFL preparation, learning materia
 ### Frontend Developer — Drinktohappy
 
 **Period:** April 2024 – September 2024
-**Type:** Professional (Full-time / Freelance-like)
+**Type:** Professional (Freelance)
 **Location:** Remote / Purbalingga
 **Work Arrangement:** Client project delivery for 3 projects
 
@@ -120,7 +120,7 @@ React.js, RSuiteJS, Redux, Midtrans (payment), AI chat integration
 
 **Period:** August 2022 – December 2022
 **Type:** Internship
-**Location:** Semarang / Remote
+**Location:** Semarang
 **Work Arrangement:** Full-stack web development internship
 
 #### Context
