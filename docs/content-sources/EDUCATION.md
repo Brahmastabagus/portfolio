@@ -17,8 +17,9 @@
   - Fullstack website frontend (React + Vite + TailwindCSS)
   - Fullstack website backend (Express/Sequelize)
   - Journal publication
+  - Repository (skripsi): https://repository.ittelkom-pwt.ac.id/11356/
 - **Source:** cv/MASTER.md, linkedin/source/SOURCE.md, portfolio/source/SOURCE.md
-- **Notes:** Nama resmi: Institut Teknologi Telkom Purwokerto. Kompetisi PRIMA/IITF berasal dari masa kuliah di ITTP (bukan SMK). Portfolio still says "sedang berkuliah" which is outdated.
+- **Notes:** Nama resmi: Institut Teknologi Telkom Purwokerto. Kompetisi PRIMA/IITF berasal dari masa kuliah di ITTP (bukan SMK). Portfolio still says "sedang berkuliah" which is outdated. Link skripsi di repository ITTP: https://repository.ittelkom-pwt.ac.id/11356/ (user-provided, Sept 2026).
 
 ---
 

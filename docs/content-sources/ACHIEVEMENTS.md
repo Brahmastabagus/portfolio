@@ -74,9 +74,10 @@
 - **Method:** RAD (Rapid Application Development)
 - **Context:** Part of thesis/research project at Institut Teknologi Telkom Purwokerto
 - **Project Relationship:** Connected to Desa Wisata Melung fullstack website (frontend: desa-melung, backend: desa-melung-be)
+- **Skripsi Repository:** https://repository.ittelkom-pwt.ac.id/11356/
 - **Evidence:** linkedin/source/SOURCE.md (publication confirmed), cv/MASTER.md (Data Karier Tambahan)
 - **Current Relevance:** Medium — demonstrates research capability, academic writing, and technical implementation. Can be mentioned in CV (especially for roles valuing research/academic contribution).
-- **Status:** CONFIRMED — publication exists
+- **Status:** CONFIRMED — publication exists, skripsi repository link user-provided Sept 2026
 
 ---
 

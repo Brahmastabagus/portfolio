@@ -18,14 +18,14 @@
   - Build TOEFL tryout flows, live quizzes, interactive question engine (charts, drag-and-drop, sequential/clickable)
   - Learning features: e-course guidelines, assignments, tryout certificates, question reporting, Google Picker, image compression, device-login limits, push notifications
   - Admin features: data export, tutor management, testimonial/FAQ management, Jobs menu, referral & coupon workflows
-- **Technologies:** React 17, TypeScript, JavaScript, MUI v5, Redux Toolkit, React Router v6, Axios, ECharts, @dnd-kit, Firebase, browser-image-compression, react-confetti, react-audio-player, react-lazy-load-image-component, react-pin-input, swiper, video.js, videojs-youtube, moment, moment-timezone, gapi-script, react-google-recaptcha, react-quill, quill-emoji, quill-image-resize-module-react, react-dropzone-uploader
+- **Technologies:** React 17, TypeScript, JavaScript, MUI v5, Redux Toolkit, React Router v6, Axios, ECharts, @dnd-kit, Firebase, react-audio-player, react-confetti, react-lazy-load-image-component, react-pin-input, swiper, video.js, videojs-youtube
 - **Repository:** Private (org Brofesional — 0 public repos)
 - **Live Demo:** Not publicly accessible
 - **Ownership:** Team repository (company codebase)
 - **Career Relevance:** High
 - **Possible Uses:** CV, Portfolio, Interview
 - **Sources:** cv/MASTER.md, linkedin/source/SOURCE.md, github/source/SOURCE.md
-- **Notes:** All tech verified via LinkedIn (React 17, TypeScript, JS, MUI v5, Reactstrap, React Bootstrap, Redux Toolkit, React Router v6, Axios, Firebase, ECharts, @dnd-kit) + dependency audit from package.json
+- **Notes:** All tech verified via LinkedIn (React 17, TypeScript, JS, MUI v5, Reactstrap, React Bootstrap, Redux Toolkit, React Router v6, Axios, Firebase, ECharts, @dnd-kit). Additional dependency evidence (react-audio-player, react-confetti, react-lazy-load-image-component, react-pin-input, swiper, video.js, videojs-youtube) dari daftar yang dikonfirmasi Bagus. Repo private — tidak ada package.json publik untuk audit.
 
 ---
 
@@ -64,7 +64,8 @@
 - **Ownership:** Team repository (not on personal account, repo no longer available)
 - **Career Relevance:** High
 - **Possible Uses:** CV, Interview
-- **Sources:** cv/MASTER.md, linkedin/source/SOURCE.md, github/source/SOURCE.md (dependency audit from Drinktohappy context)
+- **Sources:** cv/MASTER.md, linkedin/source/SOURCE.md, github/source/SOURCE.md
+- **Notes:** Tech stack Enternica/Warung Bibit/PT Safari berasal dari satu group-level dependency list Drinktohappy yang dikonfirmasi Bagus; distribusi per-project merupakan inferensi shared frontend stack. (dependency audit from Drinktohappy context)
 
 ---
 
@@ -77,12 +78,13 @@
 - **Team:** 2 (1 Frontend + 1 Backend)
 - **My Contribution:** Cart functionality, Midtrans payment integration, full frontend development
 - **Technologies:** React.js, RSuiteJS, Redux, Midtrans, axios, dayjs, dompurify, framer-motion, react-avatar-editor, react-dnd, react-dnd-html5-backend, react-dnd-touch-backend, react-helmet, react-icons, react-intersection-observer, react-lazy-load-image-component, react-phone-input-2, react-quill, react-redux, react-router-dom, react-signature-canvas, react-slick, react-toastify, universal-cookie, slick-carousel, preline
-- **Repository:** https://github.com/zodplugin/warung-bibit (team member's account — zodplugin/Muhammad Fadhlan Aqila)
+- **Repository:** https://github.com/zodplugin/warung-bibit (team member's account — zodplugin/Muhammad Fadhlan Aqila). Live check 2026-09-18: URL 404 / tidak ditemukan di daftar repo publik zodplugin (mungkin privat, diubah nama, atau dihapus) — NEEDS CONFIRMATION.
 - **Live Demo:** https://warung-bibit.vercel.app/ (LIVE — verified 2026-09-18)
 - **Ownership:** Team repository (supporting evidence)
 - **Career Relevance:** Medium
 - **Possible Uses:** CV, Interview
 - **Sources:** github/source/SOURCE.md, linkedin/source/SOURCE.md, live demo verified
+- **Notes:** Tech list berasal dari group-level dependency list Drinktohappy (dikonfirmasi Bagus); distribusi per-project merupakan inferensi dari shared frontend stack yang sama.
 
 ---
 
@@ -152,7 +154,7 @@
 - **My Role:** Frontend Developer (Internship)
 - **Team:** 10 people
 - **My Contribution:** Frontend development for Weddingly
-- **Technologies:** Next.js 12, TypeScript, Redux Toolkit, Tailwind CSS, Axios, daisyui, react-datepicker, react-hot-toast, react-icons, react-redux, react-hot-toast
+- **Technologies:** Next.js 12, TypeScript, Redux Toolkit, Tailwind CSS, Axios, daisyui, react-datepicker, react-hot-toast, react-icons, react-redux
 - **Repository:** https://github.com/gillyhuga/weddingly (fork from team repo)
 - **Live Demo:** https://weddingly.vercel.app (LIVE — verified)
 - **Ownership:** Fork / Team repository
@@ -192,9 +194,8 @@
 - **Live Demo:** https://sikoku.lazy2.codes/public/ (currently DOWN — per GitHub repo about link)
 - **Ownership:** Own repository
 - **Career Relevance:** Medium
-- **Possible Uses:** CV (with HKI), Interview
+- **Possible Uses:** CV, Interview
 - **Sources:** cv/MASTER.md, linkedin/source/SOURCE.md, github/source/SOURCE.md
-- **Notes:** Has Copyright/HKI (Ministry of Law and Human Rights, June 2022)
 
 ---
 
@@ -252,6 +253,7 @@
 - **Repository:**
   - Frontend: https://github.com/Brahmastabagus/desa-melung (owned)
   - Backend: https://github.com/Brahmastabagus/desa-melung-be (owned)
+  - Skripsi (repository ITTP): https://repository.ittelkom-pwt.ac.id/11356/
 - **Live Demo:** Not available
 - **Ownership:** Own repository
 - **Career Relevance:** Medium
@@ -265,15 +267,18 @@
 
 - **Category:** Academic / Coursework
 - **Period:** ~2022
-- **Context:** Desktop store management application — registered Copyright/HKI.
-- **My Role:** Individual developer
+- **Context:** Desktop store management application — registered Copyright/HKI (Nomor Pencatatan 000344816, No. Permohonan EC00202229256, 12 May 2022).
+- **My Role:** Pencipta (co-creator) — 1 dari 5 pencipta
+- **Creators:** Arif Amrulloh, S.Kom., M.Kom; Brahmasta Bagus Aryandra; Aqil Jawadal Furqon; Adhit Fatwa; Bintang Ahmad Fahran Adama
+- **Holder:** Institut Teknologi Telkom Purwokerto
 - **Technologies:** Java (NetBeans), MySQL
 - **Repository:** https://github.com/Brahmastabagus/Teknoko (owned, 7 commits, 4 years ago)
 - **Live Demo:** Desktop app only
-- **Ownership:** Own repository
+- **Ownership:** Own repository; HKI dipegang ITTP
 - **Career Relevance:** Low
 - **Possible Uses:** CV (HKI mention)
-- **Sources:** cv/MASTER.md, linkedin/source/SOURCE.md
+- **Sources:** cv/MASTER.md, linkedin/source/SOURCE.md, PDKI (verified data from Bagus, Sept 2026)
+- **Notes:** HKI verification URL: https://pdki-indonesia.dgip.go.id/detail/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 
 ---
 

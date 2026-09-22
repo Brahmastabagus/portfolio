@@ -51,19 +51,28 @@
 
 ---
 
-### TEKNOKO Store Management App
+### TEKNOKO Store Management App (Copyright/HKI)
 
-- **Issuer:** Ministry of Law and Human Rights
-- **Date:** May 2022
-- **Registration No:** (not specified in available sources)
-- **Type:** Copyright/HKI
-- **Description:** Java Desktop-based store management application
+- **Issuer:** Ministry of Law and Human Rights (Kementerian Hukum dan Hak Asasi Manusia RI)
+- **Date:** 12 May 2022 (tanggal pencatatan & permohonan)
+- **Registration No:** 000344816
+- **Application No:** EC00202229256
+- **Application Date:** 2022-05-12
+- **First Published:** 2022-01-21
+- **Protection End Date:** — (tidak ditentukan)
+- **Status:** Diterima
+- **Title:** TEKNOKO, Aplikasi Manajemen Toko
+- **Type:** Copyright/HKI (Hak Kekayaan Intelektual) — Program Komputer
+- **Description:** Aplikasi TEKNOKO membantu pegawai toko dalam melakukan proses manajemen toko seperti mencatat laporan transaksi setiap hari, pengecekan stok barang, data transaksi keluar-masuk, dan mengawasi masalah pengelolaan persediaan barang yang ada di dalam gudang.
+- **Holder (Pemegang):** Institut Teknologi Telkom Purwokerto (ID)
+- **Creators (Pencipta):** Arif Amrulloh, S.Kom., M.Kom; Brahmasta Bagus Aryandra; Aqil Jawadal Furqon; Adhit Fatwa; Bintang Ahmad Fahran Adama
+- **Consultant (Konsultan/Kuasa):** Danny Kurnianto, S.T., M.Eng.
+- **Verification URL:** https://pdki-indonesia.dgip.go.id/detail/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 - **Category:** Copyright / IP Registration
-- **Relevance:** Low — academic project, desktop Java app
-- **Source:** cv/MASTER.md, linkedin/source/SOURCE.md
+- **Relevance:** Low–Medium — academic project, desktop Java app; valid as intellectual property evidence but not professional web/frontend stack
+- **Source:** cv/MASTER.md, linkedin/source/SOURCE.md, PDKI (verified data from Bagus, Sept 2026)
 - **Notes:** IMPORTANT: TEKNOKO and SIKOKU are DIFFERENT categories:
-  - TEKNOKO = Copyright/HKI (registered)
-  - SIKOKO = Copyright/HKI (registered) — but LinkedIn incorrectly labels it as "Patent"
+  - TEKNOKO = Copyright/HKI (registered, held by ITTP, 5 creators including Bagus)
   - Do NOT conflate the two categories.
 
 ---
