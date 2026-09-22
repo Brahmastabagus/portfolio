@@ -7,6 +7,14 @@ import {
   Trophy,
   ExternalLink,
 } from "lucide-react";
+import {
+  Panel,
+  PanelContent,
+  PanelDescription,
+  PanelHeader,
+  PanelTitle,
+  PanelTitleSup,
+} from "@/components/panel";
 
 interface CertificationItem {
   id: string;
@@ -40,19 +48,14 @@ const CERTIFICATIONS_DATA: CertificationItem[] = [
     icon: Cloud,
   },
   {
-    id: "sikoku-hki",
-    title: "SIKOKU Web Psychotest Platform (HKI)",
-    issuer: "Ministry of Law & Human Rights (Kemenkumham RI)",
-    date: "June 2022",
-    category: "Software Copyright / Hak Cipta",
-    icon: Award,
-  },
-  {
     id: "teknoko-hki",
-    title: "TEKNOKO Store Management App (HKI)",
-    issuer: "Ministry of Law & Human Rights (Kemenkumham RI)",
-    date: "Certified IP",
-    category: "Software Copyright / Hak Cipta",
+    title: "TEKNOKO — Store Management App (Hak Cipta / HKI)",
+    issuer: "Kementerian Hukum dan Hak Asasi Manusia RI",
+    date: "May 2022",
+    credentialId: "No. 000344816 (EC00202229256)",
+    category: "Registered Intellectual Property (Copyright)",
+    verifyUrl:
+      "https://pdki-indonesia.dgip.go.id/detail/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     icon: Award,
   },
   {
@@ -65,10 +68,18 @@ const CERTIFICATIONS_DATA: CertificationItem[] = [
     icon: BookCheck,
   },
   {
-    id: "prima",
+    id: "prima-2019",
     title: "1st Place — Web Design Competition (PRIMA 2019)",
     issuer: "Amikom Student Scientific Fair",
     date: "2019",
+    category: "Competition Award",
+    icon: Trophy,
+  },
+  {
+    id: "prima-2018",
+    title: "2nd Place — Web Design Competition (PRIMA 2018)",
+    issuer: "Amikom Student Scientific Fair",
+    date: "2018",
     category: "Competition Award",
     icon: Trophy,
   },
@@ -76,77 +87,76 @@ const CERTIFICATIONS_DATA: CertificationItem[] = [
 
 export function Certifications() {
   return (
-    <section
-      id="certifications"
-      className="flex flex-col gap-6 scroll-mt-6"
-      aria-label="Certifications and Awards"
-    >
-      <div className="flex flex-col gap-1 border-b border-border/60 pb-3">
-        <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
-          Certifications & Awards
-        </h2>
-        <p className="text-sm font-mono text-muted-foreground">
-          Government-recognized credentials, intellectual property, and competition wins
-        </p>
-      </div>
+    <Panel id="certifications" aria-label="Certifications and Awards">
+      <PanelHeader>
+        <PanelTitle>
+          <a href="#certifications" className="hover:underline">Certifications & Awards</a>
+          <PanelTitleSup>[{CERTIFICATIONS_DATA.length}]</PanelTitleSup>
+        </PanelTitle>
+        <PanelDescription>
+          Government-recognized credentials, registered IP & competition awards
+        </PanelDescription>
+      </PanelHeader>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-        {CERTIFICATIONS_DATA.map((cert) => {
-          const Icon = cert.icon;
+      <PanelContent>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+          {CERTIFICATIONS_DATA.map((cert) => {
+            const Icon = cert.icon;
 
-          return (
-            <div
-              key={cert.id}
-              className="rounded-xl border border-border/70 bg-card/40 p-4 sm:p-5 flex flex-col justify-between gap-4 transition-all hover:border-border hover:bg-card/70"
-            >
-              <div className="flex flex-col gap-2.5">
-                <div className="flex items-start justify-between gap-2">
-                  <div className="size-8 rounded-lg border border-border bg-muted/60 flex items-center justify-center text-accent-blue shrink-0">
-                    <Icon className="size-4" />
+            return (
+              <div
+                key={cert.id}
+                className="rounded-lg border border-border/70 bg-card/40 p-3.5 sm:p-4 flex flex-col justify-between gap-3.5 transition-colors hover:border-border hover:bg-card/70"
+              >
+                <div className="flex flex-col gap-2.5">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="size-7 rounded-md border border-border bg-muted/60 flex items-center justify-center text-accent-blue shrink-0">
+                      <Icon className="size-3.5" />
+                    </div>
+                    <span className="text-[11px] font-mono text-muted-foreground px-2 py-0.5 rounded bg-muted/40 border border-border/60">
+                      {cert.date}
+                    </span>
                   </div>
-                  <span className="text-[11px] font-mono text-muted-foreground px-2 py-0.5 rounded bg-muted/40 border border-border/60">
-                    {cert.date}
-                  </span>
+
+                  <div className="flex flex-col gap-0.5">
+                    <h3 className="text-xs sm:text-sm font-semibold text-foreground leading-snug">
+                      {cert.title}
+                    </h3>
+                    <p className="text-xs text-foreground/80 font-medium">
+                      {cert.issuer}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="flex flex-col gap-0.5">
-                  <h3 className="text-sm sm:text-base font-semibold text-foreground leading-snug">
-                    {cert.title}
-                  </h3>
-                  <p className="text-xs text-foreground/80 font-medium">
-                    {cert.issuer}
-                  </p>
+                <div className="flex items-center justify-between gap-2 pt-2 border-t border-border/50 text-xs font-mono">
+                  {cert.credentialId ? (
+                    <span className="text-muted-foreground truncate" title={cert.credentialId}>
+                      ID: {cert.credentialId}
+                    </span>
+                  ) : (
+                    <span className="text-muted-foreground/70 text-[11px]">
+                      {cert.category}
+                    </span>
+                  )}
+
+                  {cert.verifyUrl && (
+                    <a
+                      href={cert.verifyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-accent-blue hover:underline shrink-0 font-medium"
+                      aria-label={`Verify credential for ${cert.title}`}
+                    >
+                      <span>Verify</span>
+                      <ExternalLink className="size-3" />
+                    </a>
+                  )}
                 </div>
               </div>
-
-              <div className="flex items-center justify-between gap-2 pt-2 border-t border-border/50 text-xs font-mono">
-                {cert.credentialId ? (
-                  <span className="text-muted-foreground truncate" title={cert.credentialId}>
-                    ID: {cert.credentialId}
-                  </span>
-                ) : (
-                  <span className="text-muted-foreground">
-                    {cert.category}
-                  </span>
-                )}
-
-                {cert.verifyUrl && (
-                  <a
-                    href={cert.verifyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-accent-blue hover:underline shrink-0 font-medium"
-                    aria-label={`Verify credential for ${cert.title}`}
-                  >
-                    <span>Verify</span>
-                    <ExternalLink className="size-3" />
-                  </a>
-                )}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
+            );
+          })}
+        </div>
+      </PanelContent>
+    </Panel>
   );
 }

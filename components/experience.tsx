@@ -3,6 +3,14 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
+import {
+  Panel,
+  PanelContent,
+  PanelDescription,
+  PanelHeader,
+  PanelTitle,
+  PanelTitleSup,
+} from "@/components/panel";
 
 interface ExperienceItem {
   id: string;
@@ -132,7 +140,7 @@ const EXPERIENCES: ExperienceItem[] = [
     context:
       "Delivered custom client platforms including the SIKOKU psychotest system and PT Tirta Purbalingga Adijaya profile website.",
     contributions: [
-      "Engineered SIKOKU online gamified psychometric test platform, officially granted Hak Cipta / Copyright (HKI) by Kemenkumham in 2022.",
+      "Engineered SIKOKU online gamified psychometric test platform with token-based candidate access and automated score evaluations.",
       "Built corporate web profile for PT Tirta Purbalingga Adijaya with structured content presentation.",
     ],
     technologies: ["JavaScript", "HTML5", "CSS3", "Bootstrap", "REST API"],
@@ -148,22 +156,20 @@ export function Experience() {
   };
 
   return (
-    <section
-      id="experience"
-      className="flex flex-col gap-6 scroll-mt-6"
-      aria-label="Work Experience"
-    >
-      <div className="flex flex-col gap-1 border-b border-border/60 pb-3">
-        <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
-          Work Experience
-        </h2>
-        <p className="text-sm font-mono text-muted-foreground">
-          Production roles, freelance projects, and verified achievements
-        </p>
-      </div>
+    <Panel id="experience" aria-label="Work Experience">
+      <PanelHeader>
+        <PanelTitle>
+          <a href="#experience" className="hover:underline">Work Experience</a>
+          <PanelTitleSup>[{EXPERIENCES.length}]</PanelTitleSup>
+        </PanelTitle>
+        <PanelDescription>
+          Production roles, freelance projects & verified achievements
+        </PanelDescription>
+      </PanelHeader>
 
-      {/* Vertical Timeline Container */}
-      <div className="relative border-l border-border/70 ml-2 sm:ml-3 pl-4 sm:pl-6 space-y-4 sm:space-y-6">
+      <PanelContent>
+        {/* Vertical Timeline Container */}
+        <div className="relative border-l border-border/70 ml-2 sm:ml-3 pl-4 sm:pl-6 space-y-4 sm:space-y-6">
         {EXPERIENCES.map((exp) => {
           const isOpen = expandedId === exp.id;
 
@@ -286,6 +292,7 @@ export function Experience() {
           );
         })}
       </div>
-    </section>
+      </PanelContent>
+    </Panel>
   );
 }

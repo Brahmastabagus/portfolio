@@ -2,7 +2,15 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { GraduationCap, ChevronDown, BookOpen } from "lucide-react";
+import { GraduationCap, ChevronDown, BookOpen, ExternalLink } from "lucide-react";
+import {
+  Panel,
+  PanelContent,
+  PanelDescription,
+  PanelHeader,
+  PanelTitle,
+  PanelTitleSup,
+} from "@/components/panel";
 
 interface EducationItem {
   id: string;
@@ -14,6 +22,7 @@ interface EducationItem {
   thesis?: {
     title: string;
     description: string;
+    repositoryUrl?: string;
   };
   highlights: string[];
   coursework?: string[];
@@ -32,6 +41,7 @@ const EDUCATION_DATA: EducationItem[] = [
         "Perancangan Sistem Informasi Desa Wisata Berbasis Website dengan Metode RAD, Studi Kasus: Desa Wisata Melung",
       description:
         "Engineered fullstack web portal (React + Vite + Express + TailwindCSS) and published academic research paper in journal.",
+      repositoryUrl: "https://repository.ittelkom-pwt.ac.id/11356/",
     },
     highlights: [
       "Graduated with High Honors (GPA 3.95/4.00) in Computer Software Engineering.",
@@ -90,21 +100,19 @@ export function Education() {
   };
 
   return (
-    <section
-      id="education"
-      className="flex flex-col gap-6 scroll-mt-6"
-      aria-label="Education"
-    >
-      <div className="flex flex-col gap-1 border-b border-border/60 pb-3">
-        <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
-          Education
-        </h2>
-        <p className="text-sm font-mono text-muted-foreground">
-          Academic degrees, independent study, and foundational schooling
-        </p>
-      </div>
+    <Panel id="education" aria-label="Education">
+      <PanelHeader>
+        <PanelTitle>
+          <a href="#education" className="hover:underline">Education</a>
+          <PanelTitleSup>[GPA 3.95]</PanelTitleSup>
+        </PanelTitle>
+        <PanelDescription>
+          Academic degrees, independent study & foundational schooling
+        </PanelDescription>
+      </PanelHeader>
 
-      <div className="flex flex-col gap-3.5">
+      <PanelContent>
+        <div className="flex flex-col gap-3.5">
         {EDUCATION_DATA.map((edu) => {
           const isOpen = expandedId === edu.id;
 
@@ -178,6 +186,19 @@ export function Education() {
                           <p className="text-xs text-muted-foreground">
                             {edu.thesis.description}
                           </p>
+                          {edu.thesis.repositoryUrl && (
+                            <div className="pt-1">
+                              <a
+                                href={edu.thesis.repositoryUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 text-xs font-mono text-accent-blue hover:underline"
+                              >
+                                <span>University Thesis Repository</span>
+                                <ExternalLink className="size-3" />
+                              </a>
+                            </div>
+                          )}
                         </div>
                       )}
 
@@ -220,7 +241,8 @@ export function Education() {
             </div>
           );
         })}
-      </div>
-    </section>
+        </div>
+      </PanelContent>
+    </Panel>
   );
 }
