@@ -3,8 +3,17 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Mail, Copy, Check, ExternalLink, ArrowUp } from "lucide-react";
+import {
+  Panel,
+  PanelContent,
+  PanelDescription,
+  PanelHeader,
+  PanelTitle,
+} from "@/components/panel";
 
 const PUBLIC_EMAIL = "brahmastabagus@gmail.com";
+const PUBLIC_WHATSAPP = "+62 831-1365-4031";
+const PUBLIC_WHATSAPP_LINK = "https://wa.me/6283113654031";
 
 interface SocialLinkItem {
   name: string;
@@ -15,23 +24,29 @@ interface SocialLinkItem {
 
 const SOCIAL_LINKS: SocialLinkItem[] = [
   {
+    name: "WhatsApp",
+    handle: "+62 831-1365-4031",
+    url: "https://wa.me/6283113654031",
+    description: "Direct messaging, instant inquiry & chat",
+  },
+  {
     name: "LinkedIn",
-    handle: "linkedin.com/in/brahmasta-bagus",
+    handle: "brahmasta-bagus",
     url: "https://linkedin.com/in/brahmasta-bagus",
     description: "Professional networking, endorsements & career history",
   },
   {
     name: "GitHub",
-    handle: "github.com/Brahmastabagus",
+    handle: "Brahmastabagus",
     url: "https://github.com/Brahmastabagus",
     description: "Open source contributions, repositories & code activity",
   },
-  {
-    name: "AWS Credly",
-    handle: "credly.com/badges/brahmasta-bagus",
-    url: "https://www.credly.com/badges/bec9d255-1fd6-44ac-a582-63f6dff6ea5f/public_url",
-    description: "Verified Amazon Web Services Cloud Architecting badge",
-  },
+  // {
+  //   name: "AWS Credly",
+  //   handle: "credly.com/badges/brahmasta-bagus",
+  //   url: "https://www.credly.com/badges/bec9d255-1fd6-44ac-a582-63f6dff6ea5f/public_url",
+  //   description: "Verified Amazon Web Services Cloud Architecting badge",
+  // },
 ];
 
 function StaggerLetterText({ text, isHovered }: { text: string; isHovered: boolean }) {
@@ -110,93 +125,116 @@ export function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      className="flex flex-col gap-8 scroll-mt-6 pt-4"
-      aria-label="Contact and Social Links"
-    >
-      <div className="flex flex-col gap-1 border-b border-border/60 pb-3">
-        <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
-          Contact & Connect
-        </h2>
-        <p className="text-sm font-mono text-muted-foreground">
+    <Panel id="contact" aria-label="Contact and Social Links">
+      <PanelHeader>
+        <PanelTitle>
+          <a href="#contact" className="hover:underline">Contact & Connect</a>
+        </PanelTitle>
+        <PanelDescription>
           Open for engineering opportunities, collaboration, or technical discussions
-        </p>
-      </div>
+        </PanelDescription>
+      </PanelHeader>
 
-      {/* Main Email Action Box */}
-      <div className="rounded-2xl border border-border/80 bg-card/60 p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-5 shadow-xs">
-        <div className="flex flex-col gap-1.5">
-          <div className="flex items-center gap-2 text-foreground font-semibold text-base sm:text-lg">
-            <Mail className="size-5 text-accent-blue" />
-            <span>Let&apos;s Build Together</span>
+      <PanelContent className="flex flex-col gap-6">
+        {/* Main Email Action Box */}
+        <div className="rounded-xl border border-border/80 bg-card/50 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex flex-col gap-1.5">
+            <div className="flex items-center gap-2 text-foreground font-semibold text-sm sm:text-base">
+              <Mail className="size-4 text-accent-blue" />
+              <span>Let&apos;s Build Together</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-foreground max-w-md">
+              Have an open role, project inquiry, or want to discuss frontend architecture?
+              Feel free to send a direct message.
+            </p>
+            <div className="flex flex-wrap items-center gap-2 pt-0.5 text-xs font-mono">
+              <span className="text-foreground font-medium">{PUBLIC_EMAIL}</span>
+              <span className="text-muted-foreground/60">·</span>
+              <span className="text-foreground font-medium">{PUBLIC_WHATSAPP}</span>
+            </div>
           </div>
-          <p className="text-xs sm:text-sm text-muted-foreground max-w-md">
-            Have an open role, project inquiry, or want to discuss frontend architecture?
-            Feel free to send a direct message.
-          </p>
-          <span className="text-xs font-mono text-foreground font-medium pt-1">
-            {PUBLIC_EMAIL}
-          </span>
+
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            <button
+              type="button"
+              onClick={handleCopyEmail}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono border border-border bg-background hover:bg-muted/80 text-foreground transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-accent-blue"
+              title={`Copy ${PUBLIC_EMAIL} to clipboard`}
+            >
+              {copied ? (
+                <>
+                  <Check className="size-3 text-accent-green" />
+                  <span className="text-accent-green font-medium">Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="size-3 text-muted-foreground" />
+                  <span>Copy</span>
+                </>
+              )}
+            </button>
+
+            <a
+              href={`mailto:${PUBLIC_EMAIL}`}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-foreground text-background hover:bg-foreground/90 transition-colors font-medium cursor-pointer"
+            >
+              <span>Email Me</span>
+              <ExternalLink className="size-3" />
+            </a>
+
+            <a
+              href={PUBLIC_WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono border border-border bg-background hover:bg-muted text-foreground transition-colors font-medium cursor-pointer"
+            >
+              <span>WhatsApp</span>
+              <ExternalLink className="size-3 text-muted-foreground" />
+            </a>
+          </div>
         </div>
 
-        <div className="flex items-center gap-2.5 shrink-0">
+        {/* Social Links Grid */}
+        <div className="flex flex-col gap-2.5">
+          <span className="text-xs font-mono font-medium text-foreground uppercase tracking-wider">
+            Verified Profiles & Socials
+          </span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {SOCIAL_LINKS.map((link) => (
+              <SocialLinkCard key={link.name} link={link} />
+            ))}
+          </div>
+        </div>
+
+        {/* Minimalist MVP Footer inside PanelContent */}
+        <footer className="pt-6 pb-2 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-muted-foreground">
+          <div className="flex flex-wrap gap-1">
+            <span>© {new Date().getFullYear()} Brahmasta Bagus Aryandra.
+            </span>
+            <span>Old Version:
+              <a
+                href={"https://brahmastabagus.github.io"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-accent-blue hover:underline"
+              >
+                <span>brahmastabagus.github.io</span>
+                <ExternalLink className="size-3 text-muted-foreground" />
+              </a>
+            </span>
+          </div>
+
           <button
             type="button"
-            onClick={handleCopyEmail}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-mono border border-border bg-background hover:bg-muted text-foreground transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-accent-blue"
+            onClick={scrollToTop}
+            className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+            aria-label="Scroll to top of page"
           >
-            {copied ? (
-              <>
-                <Check className="size-3.5 text-accent-green" />
-                <span className="text-accent-green font-medium">Copied!</span>
-              </>
-            ) : (
-              <>
-                <Copy className="size-3.5 text-muted-foreground" />
-                <span>Copy Email</span>
-              </>
-            )}
+            <span>Back to Top</span>
+            <ArrowUp className="size-3.5" />
           </button>
-
-          <a
-            href={`mailto:${PUBLIC_EMAIL}`}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-mono border border-border bg-foreground text-background hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-accent-blue"
-          >
-            <span>Send Email</span>
-            <ExternalLink className="size-3.5" />
-          </a>
-        </div>
-      </div>
-
-      {/* Social Links with Stagger Text Effect */}
-      <div className="flex flex-col gap-3">
-        <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
-          Direct Professional Channels:
-        </span>
-        <div className="flex flex-col gap-2.5">
-          {SOCIAL_LINKS.map((link) => (
-            <SocialLinkCard key={link.name} link={link} />
-          ))}
-        </div>
-      </div>
-
-      {/* Minimalist MVP Footer */}
-      <footer className="pt-10 pb-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-muted-foreground">
-        <div>
-          <span>© {new Date().getFullYear()} Brahmasta Bagus Aryandra. Crafted with Next.js & Tailwind CSS.</span>
-        </div>
-
-        <button
-          type="button"
-          onClick={scrollToTop}
-          className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-          aria-label="Scroll to top of page"
-        >
-          <span>Back to Top</span>
-          <ArrowUp className="size-3.5" />
-        </button>
-      </footer>
-    </section>
+        </footer>
+      </PanelContent>
+    </Panel>
   );
 }
