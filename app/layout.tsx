@@ -38,6 +38,13 @@ export const metadata: Metadata = {
     "Portfolio",
   ],
   authors: [{ name: "Brahmasta Bagus Aryandra" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "Brahmasta Bagus Aryandra — Frontend Developer",
     description:
@@ -76,7 +83,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-200">
+      <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-200 overflow-x-clip">
         <ThemeProvider>
           {children}
           <FloatingBottomDock />
