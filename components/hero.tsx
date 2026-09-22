@@ -1,18 +1,32 @@
 import React from "react";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
-export function Hero() {
+export function Hero({ className }: { className?: string }) {
   return (
     <header
       id="hero"
-      className="flex flex-col gap-6 pt-4 sm:pt-8"
+      className={cn(
+        "screen-line-top screen-line-bottom relative bg-background p-4 sm:p-6 flex flex-col gap-6",
+        className
+      )}
       aria-label="Hero Section"
     >
       <div className="flex items-center justify-between gap-4">
-        {/* Monogram Avatar */}
-        <div className="relative size-20 sm:size-24 rounded-full border border-border bg-gradient-to-br from-muted/80 to-muted/20 flex items-center justify-center font-mono text-2xl font-semibold text-foreground select-none shadow-sm ring-1 ring-border/50">
-          <span className="tracking-tighter">BA</span>
+        {/* Photo Avatar with Availability Indicator */}
+        <div className="relative size-20 sm:size-24 select-none shrink-0">
+          <div className="size-full rounded-full overflow-hidden border border-border/80 shadow-xs ring-1 ring-border/50 relative bg-muted/40">
+            <Image
+              src="/avatar.jpg"
+              alt="Brahmasta Bagus Aryandra"
+              fill
+              priority
+              className="object-cover object-top"
+              sizes="(max-width: 640px) 80px, 96px"
+            />
+          </div>
           <div
-            className="absolute -bottom-1 -right-1 size-5 rounded-full bg-background flex items-center justify-center"
+            className="absolute -bottom-0.5 -right-0.5 size-5 rounded-full bg-background flex items-center justify-center shadow-xs ring-1 ring-border/60"
             title="Available for opportunities"
           >
             <span className="size-3 rounded-full bg-accent-green" />
@@ -38,7 +52,7 @@ export function Hero() {
         </p>
       </div>
 
-      <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
         Specializing in building scalable, accessible, and production-ready
         web applications with React, TypeScript, Redux Toolkit, and modern
         frontend architectures. Passionate about AI-integrated interfaces and
