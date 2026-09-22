@@ -3,6 +3,13 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "motion/react";
 import { Sparkles, Gauge, GraduationCap } from "lucide-react";
+import {
+  Panel,
+  PanelContent,
+  PanelDescription,
+  PanelHeader,
+  PanelTitle,
+} from "@/components/panel";
 
 interface WordProps {
   children: string;
@@ -56,53 +63,55 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="flex flex-col gap-8 scroll-mt-6" aria-label="About Me">
-      <div className="flex flex-col gap-1 border-b border-border/60 pb-3">
-        <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
-          About
-        </h2>
-        <p className="text-sm font-mono text-muted-foreground">
+    <Panel id="about" aria-label="About Me">
+      <PanelHeader>
+        <PanelTitle>
+          <a href="#about" className="hover:underline">About</a>
+        </PanelTitle>
+        <PanelDescription>
           Engineering background & core technical focus
-        </p>
-      </div>
+        </PanelDescription>
+      </PanelHeader>
 
-      {/* Editorial Scroll Reveal Paragraph */}
-      <div ref={containerRef} className="py-2">
-        <p className="text-lg sm:text-xl font-normal leading-relaxed text-muted-foreground/40">
-          {words.map((word, i) => {
-            const start = i / words.length;
-            const end = start + 1 / words.length;
+      <PanelContent className="flex flex-col gap-6">
+        {/* Editorial Scroll Reveal Paragraph */}
+        <div ref={containerRef} className="py-2">
+          <p className="text-base sm:text-lg font-normal leading-relaxed text-muted-foreground/40">
+            {words.map((word, i) => {
+              const start = i / words.length;
+              const end = start + 1 / words.length;
+              return (
+                <Word key={`${word}-${i}`} progress={scrollYProgress} range={[start, end]}>
+                  {word}
+                </Word>
+              );
+            })}
+          </p>
+        </div>
+
+        {/* Key Highlights Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          {highlights.map((item) => {
+            const Icon = item.icon;
             return (
-              <Word key={`${word}-${i}`} progress={scrollYProgress} range={[start, end]}>
-                {word}
-              </Word>
+              <div
+                key={item.title}
+                className="rounded-lg border border-border/70 bg-card/40 p-3.5 sm:p-4 flex flex-col gap-2 transition-colors hover:border-border hover:bg-card/70"
+              >
+                <div className="size-7 rounded-md border border-border bg-muted/60 flex items-center justify-center text-foreground">
+                  <Icon className="size-3.5 text-accent-blue" />
+                </div>
+                <h3 className="text-xs sm:text-sm font-semibold text-foreground">
+                  {item.title}
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
             );
           })}
-        </p>
-      </div>
-
-      {/* Key Highlights Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 pt-2">
-        {highlights.map((item) => {
-          const Icon = item.icon;
-          return (
-            <div
-              key={item.title}
-              className="rounded-xl border border-border/70 bg-card/50 p-4 flex flex-col gap-2.5 transition-colors hover:border-border"
-            >
-              <div className="size-8 rounded-lg border border-border bg-muted/60 flex items-center justify-center text-foreground">
-                <Icon className="size-4 text-accent-blue" />
-              </div>
-              <h3 className="text-sm font-semibold text-foreground">
-                {item.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          );
-        })}
-      </div>
-    </section>
+        </div>
+      </PanelContent>
+    </Panel>
   );
 }
