@@ -14,7 +14,6 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
 import {
   Panel,
   PanelContent,
