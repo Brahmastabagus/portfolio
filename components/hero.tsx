@@ -25,18 +25,6 @@ export function Hero({ className }: { className?: string }) {
               sizes="(max-width: 640px) 80px, 96px"
             />
           </div>
-          <div
-            className="absolute -bottom-0.5 -right-0.5 size-5 rounded-full bg-background flex items-center justify-center shadow-xs ring-1 ring-border/60"
-            title="Available for opportunities"
-          >
-            <span className="size-3 rounded-full bg-accent-green" />
-          </div>
-        </div>
-
-        {/* Availability Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono border border-border/80 bg-muted/40 text-muted-foreground hover:text-foreground transition-colors">
-          <span className="size-2 rounded-full bg-accent-green animate-pulse" />
-          <span>Available for opportunities</span>
         </div>
       </div>
 
@@ -45,9 +33,9 @@ export function Hero({ className }: { className?: string }) {
           Brahmasta Bagus Aryandra
         </h1>
         <p className="text-lg sm:text-xl font-medium text-foreground/90">
-          Frontend Developer{" "}
+          {"Frontend Developer at "}
           <span className="text-muted-foreground font-normal">
-            at Brofesional by Youth Educational Centre
+            Brofesional by Youth Educational Centre
           </span>
         </p>
       </div>

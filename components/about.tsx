@@ -2,7 +2,6 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "motion/react";
-import { Sparkles, Gauge, GraduationCap } from "lucide-react";
 import {
   Panel,
   PanelContent,
@@ -43,20 +42,17 @@ export function About() {
 
   const highlights = [
     {
-      icon: Sparkles,
-      title: "AI-Integrated Frontend",
+      title: "AI-integrated frontend",
       description:
         "Refactored chatbot 'Brodi' with SSE streaming, contextual conversation memory, and interactive UI carousels and tables.",
     },
     {
-      icon: Gauge,
-      title: "Performance Optimization",
+      title: "Performance optimization",
       description:
         "Redesigned high-traffic API usage patterns to achieve ~70% payload reduction and eliminate browser freezes on 1,000+ records.",
     },
     {
-      icon: GraduationCap,
-      title: "Academic & Bootcamp Excellence",
+      title: "Academic and bootcamp",
       description:
         "S1 Computer Software Engineering from IT Telkom Purwokerto (GPA 3.95/4.00) and Binar Academy Fullstack Web Development (Hard-skill 4.9/5).",
     },
@@ -89,28 +85,16 @@ export function About() {
           </p>
         </div>
 
-        {/* Key Highlights Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-          {highlights.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.title}
-                className="rounded-lg border border-border/70 bg-card/40 p-3.5 sm:p-4 flex flex-col gap-2 transition-colors hover:border-border hover:bg-card/70"
-              >
-                <div className="size-7 rounded-md border border-border bg-muted/60 flex items-center justify-center text-foreground">
-                  <Icon className="size-3.5 text-accent-blue" />
-                </div>
-                <h3 className="text-xs sm:text-sm font-semibold text-foreground">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+        <ul className="border-t border-border/60">
+          {highlights.map((item) => (
+            <li key={item.title} className="border-b border-border/60 py-3 last:border-b-0">
+              <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                {item.description}
+              </p>
+            </li>
+          ))}
+        </ul>
       </PanelContent>
     </Panel>
   );

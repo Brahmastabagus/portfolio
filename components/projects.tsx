@@ -5,9 +5,6 @@ import {
   ExternalLink,
   Lock,
   Sparkles,
-  Plane,
-  Building,
-  Users,
   Award,
   FolderGit2,
   BookOpen,
@@ -38,7 +35,6 @@ interface FeaturedProjectItem {
   playStoreUrl?: string;
   appStoreUrl?: string;
   isPrivate?: boolean;
-  visualType: "brofesional" | "enternica" | "terbangin" | "technopark";
 }
 
 const FEATURED_PROJECTS: FeaturedProjectItem[] = [
@@ -81,7 +77,6 @@ const FEATURED_PROJECTS: FeaturedProjectItem[] = [
     liveUrl: "https://brofesional.id",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.brofesional.app&hl=id&pli=1",
     appStoreUrl: "https://apps.apple.com/id/app/brofesional/id6747415242",
-    visualType: "brofesional",
   },
   {
     id: "enternica",
@@ -115,7 +110,6 @@ const FEATURED_PROJECTS: FeaturedProjectItem[] = [
     ],
     repoUrl: "https://github.com/Brahmastabagus/enternica-archive",
     liveUrl: "https://enternica.com",
-    visualType: "enternica",
   },
   {
     id: "terbangin",
@@ -145,7 +139,6 @@ const FEATURED_PROJECTS: FeaturedProjectItem[] = [
     ],
     repoUrl: "https://github.com/orgs/TerbangIn",
     liveUrl: "https://terbang-in.netlify.app",
-    visualType: "terbangin",
   },
   {
     id: "semarang-technopark",
@@ -177,7 +170,6 @@ const FEATURED_PROJECTS: FeaturedProjectItem[] = [
     ],
     repoUrl: "https://github.com/adhipramanax/Semarang-Technopark",
     liveUrl: "https://semarang-technopark-two.vercel.app/",
-    visualType: "technopark",
   },
 ];
 
@@ -460,209 +452,10 @@ const CATEGORY_TABS = [
   { id: "practice", label: "Practice & Tools" },
 ];
 
-function ProjectVisualMockup({
-  type,
-}: {
-  type: FeaturedProjectItem["visualType"];
-}) {
-  switch (type) {
-    case "brofesional":
-      return (
-        <div className="w-full h-40 sm:h-48 rounded-lg border border-border/60 bg-gradient-to-br from-muted/60 via-card to-muted/30 p-3 sm:p-4 flex flex-col justify-between select-none overflow-hidden relative group/preview">
-          <div className="flex items-center justify-between border-b border-border/50 pb-2">
-            <div className="flex items-center gap-1.5">
-              <span className="size-2 rounded-full bg-red-500/60" />
-              <span className="size-2 rounded-full bg-yellow-500/60" />
-              <span className="size-2 rounded-full bg-green-500/60" />
-              <span className="text-[11px] font-mono text-muted-foreground ml-1">
-                brofesional.app · Android & iOS (WebView)
-              </span>
-            </div>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-accent-blue/10 text-accent-blue border border-accent-blue/20">
-              5k+ Users
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3 my-auto">
-            <div className="size-10 rounded-lg bg-accent-blue/15 border border-accent-blue/30 flex items-center justify-center text-accent-blue shrink-0">
-              <Sparkles className="size-5" />
-            </div>
-            <div className="flex flex-col gap-1 min-w-0">
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-foreground truncate">
-                  AI Chatbot &quot;Brodi&quot;
-                </span>
-                <span className="size-1.5 rounded-full bg-accent-green animate-pulse" />
-              </div>
-              <span className="text-[11px] font-mono text-muted-foreground truncate">
-                SSE response streaming · Contextual reasoning
-              </span>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between pt-2 border-t border-border/40 text-[10px] font-mono text-muted-foreground">
-            <span>TOEFL Prep · Live Quizzes</span>
-            <span className="text-accent-blue font-medium">~70% Payload Saved</span>
-          </div>
-        </div>
-      );
-
-    case "enternica":
-      return (
-        <div className="w-full h-40 sm:h-48 rounded-lg border border-border/60 bg-gradient-to-br from-muted/60 via-card to-muted/30 p-3 sm:p-4 flex flex-col justify-between select-none overflow-hidden relative group/preview">
-          <div className="flex items-center justify-between border-b border-border/50 pb-2">
-            <div className="flex items-center gap-1.5">
-              <span className="size-2 rounded-full bg-red-500/60" />
-              <span className="size-2 rounded-full bg-yellow-500/60" />
-              <span className="size-2 rounded-full bg-green-500/60" />
-              <span className="text-[11px] font-mono text-muted-foreground ml-1">
-                enternica.com · Talent Booking Platform
-              </span>
-            </div>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-accent-blue/10 text-accent-blue border border-accent-blue/20">
-              Drinktohappy Client
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3 my-auto">
-            <div className="size-10 rounded-lg bg-accent-blue/15 border border-accent-blue/30 flex items-center justify-center text-accent-blue shrink-0">
-              <Users className="size-5" />
-            </div>
-            <div className="flex flex-col gap-1 min-w-0">
-              <span className="text-xs font-semibold text-foreground truncate">
-                Multi-Stage Talent Booking Flow
-              </span>
-              <span className="text-[11px] font-mono text-muted-foreground truncate">
-                Digital Contract Signing · react-signature-canvas · AI Chatbot
-              </span>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between pt-2 border-t border-border/40 text-[10px] font-mono text-muted-foreground">
-            <span>Talent Scheduling · Document Approvals</span>
-            <span className="text-accent-blue font-medium">Client Production</span>
-          </div>
-        </div>
-      );
-
-    case "terbangin":
-      return (
-        <div className="w-full h-40 sm:h-48 rounded-lg border border-border/60 bg-gradient-to-br from-muted/60 via-card to-muted/30 p-3 sm:p-4 flex flex-col justify-between select-none overflow-hidden relative group/preview">
-          <div className="flex items-center justify-between border-b border-border/50 pb-2">
-            <div className="flex items-center gap-1.5">
-              <span className="size-2 rounded-full bg-red-500/60" />
-              <span className="size-2 rounded-full bg-yellow-500/60" />
-              <span className="size-2 rounded-full bg-green-500/60" />
-              <span className="text-[11px] font-mono text-muted-foreground ml-1">
-                terbang-in.netlify.app
-              </span>
-            </div>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-accent-green/10 text-accent-green border border-accent-green/20">
-              Live Demo
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3 my-auto">
-            <div className="size-10 rounded-lg bg-accent-blue/15 border border-accent-blue/30 flex items-center justify-center text-accent-blue shrink-0">
-              <Plane className="size-5" />
-            </div>
-            <div className="flex flex-col gap-1 min-w-0">
-              <span className="text-xs font-semibold text-foreground truncate">
-                Flight Ticket Booking Platform
-              </span>
-              <span className="text-[11px] font-mono text-muted-foreground truncate">
-                React + TypeScript + Redux Toolkit + PostgreSQL
-              </span>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between pt-2 border-t border-border/40 text-[10px] font-mono text-muted-foreground">
-            <span>Binar Academy Capstone</span>
-            <span className="text-accent-blue font-medium">Score 4.9 / 5.0</span>
-          </div>
-        </div>
-      );
-
-    case "technopark":
-      return (
-        <div className="w-full h-40 sm:h-48 rounded-lg border border-border/60 bg-gradient-to-br from-muted/60 via-card to-muted/30 p-3 sm:p-4 flex flex-col justify-between select-none overflow-hidden relative group/preview">
-          <div className="flex items-center justify-between border-b border-border/50 pb-2">
-            <div className="flex items-center gap-1.5">
-              <span className="size-2 rounded-full bg-red-500/60" />
-              <span className="size-2 rounded-full bg-yellow-500/60" />
-              <span className="size-2 rounded-full bg-green-500/60" />
-              <span className="text-[11px] font-mono text-muted-foreground ml-1">
-                semarang-technopark-two.vercel.app
-              </span>
-            </div>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-accent-green/10 text-accent-green border border-accent-green/20">
-              Live Demo
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3 my-auto">
-            <div className="size-10 rounded-lg bg-accent-blue/15 border border-accent-blue/30 flex items-center justify-center text-accent-blue shrink-0">
-              <Building className="size-5" />
-            </div>
-            <div className="flex flex-col gap-1 min-w-0">
-              <span className="text-xs font-semibold text-foreground truncate">
-                Coworking Space Booking & Incubation Portal
-              </span>
-              <span className="text-[11px] font-mono text-muted-foreground truncate">
-                React 18 + Tailwind CSS + @tiptap/react + React Context
-              </span>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between pt-2 border-t border-border/40 text-[10px] font-mono text-muted-foreground">
-            <span>Akselerator Lab Internship</span>
-            <span className="text-accent-blue font-medium">10-Person Agile Team</span>
-          </div>
-        </div>
-      );
-
-    default:
-      return null;
-  }
-}
-
 function SpotlightCard({ project }: { project: FeaturedProjectItem }) {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  };
-
   return (
-    <div
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="relative rounded-2xl border border-border/80 bg-card/40 p-5 sm:p-6 transition-all hover:border-border duration-300 overflow-hidden flex flex-col gap-5 group"
-    >
-      {/* Spotlight highlight overlay */}
-      <div
-        className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background: isHovered
-            ? `radial-gradient(420px circle at ${mousePos.x}px ${mousePos.y}px, rgba(59, 130, 246, 0.08), transparent 80%)`
-            : "none",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Hover Image / Visual Mockup Container with scale-102 animation */}
-      <div className="w-full transform transition-transform duration-300 ease-out group-hover:scale-[1.02]">
-        <ProjectVisualMockup type={project.visualType} />
-      </div>
-
-      {/* Project Meta Information */}
-      <div className="flex flex-col gap-3 relative z-10">
+    <div className="relative rounded-2xl border border-border/80 bg-card/40 p-5 sm:p-6 transition-colors hover:border-border flex flex-col gap-5">
+      <div className="flex flex-col gap-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
           <div>
             <div className="flex items-center gap-2">
@@ -898,20 +691,6 @@ export function Projects() {
                 <div className="flex flex-col gap-2">
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex items-center gap-2 min-w-0">
-                      <div
-                        className={cn(
-                          "size-6 rounded-md border flex items-center justify-center shrink-0",
-                          item.isHki
-                            ? "border-amber-500/40 bg-amber-500/10 text-amber-500"
-                            : "border-border bg-muted/60 text-accent-blue"
-                        )}
-                      >
-                        {item.isHki ? (
-                          <Award className="size-3" />
-                        ) : (
-                          <FolderGit2 className="size-3" />
-                        )}
-                      </div>
                       <h4 className="text-xs sm:text-sm font-semibold text-foreground truncate">
                         {item.title}
                       </h4>

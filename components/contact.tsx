@@ -80,7 +80,7 @@ function SocialLinkCard({ link }: { link: SocialLinkItem }) {
       rel="noopener noreferrer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="rounded-xl border border-border/70 bg-card/40 p-4 flex items-center justify-between gap-4 transition-all hover:border-border hover:bg-card/70 group focus-visible:outline-2 focus-visible:outline-accent-blue"
+      className="flex items-center justify-between gap-4 border-t border-border/60 py-3 group focus-visible:outline-2 focus-visible:outline-accent-blue"
       aria-label={`Visit Bagus on ${link.name}`}
     >
       <div className="flex flex-col gap-1 min-w-0">
@@ -100,9 +100,7 @@ function SocialLinkCard({ link }: { link: SocialLinkItem }) {
         </p>
       </div>
 
-      <div className="size-8 rounded-lg border border-border bg-muted/50 flex items-center justify-center text-muted-foreground group-hover:text-foreground group-hover:border-accent-blue/40 shrink-0 transition-colors">
-        <ExternalLink className="size-4" />
-      </div>
+      <ExternalLink className="size-3.5 shrink-0 text-muted-foreground group-hover:text-foreground" />
     </a>
   );
 }
@@ -141,11 +139,10 @@ export function Contact() {
           <div className="flex flex-col gap-1.5">
             <div className="flex items-center gap-2 text-foreground font-semibold text-sm sm:text-base">
               <Mail className="size-4 text-accent-blue" />
-              <span>Let&apos;s Build Together</span>
+              <span>Email and WhatsApp</span>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-md">
-              Have an open role, project inquiry, or want to discuss frontend architecture?
-              Feel free to send a direct message.
+              For an open role, a project inquiry, or a question about frontend architecture.
             </p>
             <div className="flex flex-wrap items-center gap-2 pt-0.5 text-xs font-mono">
               <span className="text-foreground font-medium">{PUBLIC_EMAIL}</span>
@@ -195,15 +192,10 @@ export function Contact() {
         </div>
 
         {/* Social Links Grid */}
-        <div className="flex flex-col gap-2.5">
-          <span className="text-xs font-mono font-medium text-foreground uppercase tracking-wider">
-            Verified Profiles & Socials
-          </span>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {SOCIAL_LINKS.map((link) => (
-              <SocialLinkCard key={link.name} link={link} />
-            ))}
-          </div>
+        <div className="border-b border-border/60">
+          {SOCIAL_LINKS.map((link) => (
+            <SocialLinkCard key={link.name} link={link} />
+          ))}
         </div>
 
         {/* Minimalist MVP Footer inside PanelContent */}

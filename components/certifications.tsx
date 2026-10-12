@@ -99,63 +99,39 @@ export function Certifications() {
       </PanelHeader>
 
       <PanelContent>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-          {CERTIFICATIONS_DATA.map((cert) => {
-            const Icon = cert.icon;
-
-            return (
-              <div
-                key={cert.id}
-                className="rounded-lg border border-border/70 bg-card/40 p-3.5 sm:p-4 flex flex-col justify-between gap-3.5 transition-colors hover:border-border hover:bg-card/70"
-              >
-                <div className="flex flex-col gap-2.5">
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="size-7 rounded-md border border-border bg-muted/60 flex items-center justify-center text-accent-blue shrink-0">
-                      <Icon className="size-3.5" />
-                    </div>
-                    <span className="text-[11px] font-mono text-muted-foreground px-2 py-0.5 rounded bg-muted/40 border border-border/60">
-                      {cert.date}
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col gap-0.5">
-                    <h3 className="text-xs sm:text-sm font-semibold text-foreground leading-snug">
-                      {cert.title}
-                    </h3>
-                    <p className="text-xs text-foreground/80 font-medium">
-                      {cert.issuer}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between gap-2 pt-2 border-t border-border/50 text-xs font-mono">
-                  {cert.credentialId ? (
-                    <span className="text-muted-foreground truncate" title={cert.credentialId}>
-                      ID: {cert.credentialId}
-                    </span>
-                  ) : (
-                    <span className="text-muted-foreground/70 text-[11px]">
-                      {cert.category}
-                    </span>
-                  )}
-
-                  {cert.verifyUrl && (
-                    <a
-                      href={cert.verifyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-accent-blue hover:underline shrink-0 font-medium"
-                      aria-label={`Verify credential for ${cert.title}`}
-                    >
-                      <span>Verify</span>
-                      <ExternalLink className="size-3" />
-                    </a>
-                  )}
-                </div>
+        <ul className="border-t border-border/60">
+          {CERTIFICATIONS_DATA.map((cert) => (
+            <li
+              key={cert.id}
+              className="flex flex-col gap-1 border-b border-border/60 py-3 last:border-b-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
+            >
+              <div className="min-w-0">
+                <h3 className="text-sm font-semibold text-foreground">{cert.title}</h3>
+                <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                {cert.credentialId ? (
+                  <p className="mt-0.5 font-mono text-xs text-muted-foreground" title={cert.credentialId}>
+                    ID: {cert.credentialId}
+                  </p>
+                ) : null}
               </div>
-            );
-          })}
-        </div>
+              <div className="flex shrink-0 items-center gap-3 font-mono text-xs text-muted-foreground">
+                <span>{cert.date}</span>
+                {cert.verifyUrl ? (
+                  <a
+                    href={cert.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-medium text-accent-blue hover:underline"
+                    aria-label={`Verify credential for ${cert.title}`}
+                  >
+                    <span>Verify</span>
+                    <ExternalLink className="size-3" />
+                  </a>
+                ) : null}
+              </div>
+            </li>
+          ))}
+        </ul>
       </PanelContent>
     </Panel>
   );
