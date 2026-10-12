@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "motion/react";
-import { Mail, Copy, Check, ExternalLink, ArrowUp } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import { Mail, ExternalLink, ArrowUp } from "lucide-react";
 import {
   Panel,
   PanelContent,
@@ -10,58 +10,63 @@ import {
   PanelHeader,
   PanelTitle,
 } from "@/components/panel";
+import { siteConfig } from "@/lib/site-config";
 
-const PUBLIC_EMAIL = "brahmastabagus@gmail.com";
-const PUBLIC_WHATSAPP = "+62 831-1365-4031";
-const PUBLIC_WHATSAPP_LINK = "https://wa.me/6283113654031";
-
-interface SocialLinkItem {
+interface ContactLinkItem {
   name: string;
   handle: string;
   url: string;
   description: string;
+  external: boolean;
 }
 
-const SOCIAL_LINKS: SocialLinkItem[] = [
+const CONTACT_LINKS: ContactLinkItem[] = [
+  {
+    name: "Email",
+    handle: siteConfig.email,
+    url: `mailto:${siteConfig.email}`,
+    description: "For a role, a project, or a technical question",
+    external: false,
+  },
   {
     name: "WhatsApp",
-    handle: "+62 831-1365-4031",
-    url: "https://wa.me/6283113654031",
+    handle: siteConfig.phone,
+    url: siteConfig.links.whatsapp,
     description: "Direct messaging, instant inquiry & chat",
+    external: true,
   },
   {
     name: "LinkedIn",
     handle: "brahmasta-bagus",
-    url: "https://linkedin.com/in/brahmasta-bagus",
+    url: siteConfig.links.linkedin,
     description: "Professional networking, endorsements & career history",
+    external: true,
   },
   {
     name: "GitHub",
     handle: "Brahmastabagus",
-    url: "https://github.com/Brahmastabagus",
+    url: siteConfig.links.github,
     description: "Open source contributions, repositories & code activity",
+    external: true,
   },
-  // {
-  //   name: "AWS Credly",
-  //   handle: "credly.com/badges/brahmasta-bagus",
-  //   url: "https://www.credly.com/badges/bec9d255-1fd6-44ac-a582-63f6dff6ea5f/public_url",
-  //   description: "Verified Amazon Web Services Cloud Architecting badge",
-  // },
 ];
 
 function StaggerLetterText({ text, isHovered }: { text: string; isHovered: boolean }) {
+  const reduced = useReducedMotion() ?? false;
+  const lift = isHovered && !reduced;
+
   return (
     <span className="inline-flex font-mono text-sm">
       {text.split("").map((char, index) => (
         <motion.span
-          key={index}
-          animate={isHovered ? { y: -2 } : { y: 0 }}
+          key={`${char}-${index}`}
+          animate={lift ? { y: -2 } : { y: 0 }}
           transition={{
-            duration: 0.18,
-            delay: isHovered ? index * 0.022 : 0,
+            duration: reduced ? 0 : 0.18,
+            delay: lift ? index * 0.022 : 0,
             ease: "easeOut",
           }}
-          className="inline-block transition-colors"
+          className="inline-block"
         >
           {char === " " ? "\u00A0" : char}
         </motion.span>
@@ -70,18 +75,18 @@ function StaggerLetterText({ text, isHovered }: { text: string; isHovered: boole
   );
 }
 
-function SocialLinkCard({ link }: { link: SocialLinkItem }) {
+function ContactLink({ link }: { link: ContactLinkItem }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <a
       href={link.url}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={link.external ? "_blank" : undefined}
+      rel={link.external ? "noopener noreferrer" : undefined}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="flex items-center justify-between gap-4 border-t border-border/60 py-3 group focus-visible:outline-2 focus-visible:outline-accent-blue"
-      aria-label={`Visit Bagus on ${link.name}`}
+      aria-label={link.external ? `Visit Bagus on ${link.name}` : `Email ${siteConfig.email}`}
     >
       <div className="flex flex-col gap-1 min-w-0">
         <div className="flex items-center gap-2">
@@ -100,24 +105,16 @@ function SocialLinkCard({ link }: { link: SocialLinkItem }) {
         </p>
       </div>
 
-      <ExternalLink className="size-3.5 shrink-0 text-muted-foreground group-hover:text-foreground" />
+      {link.external ? (
+        <ExternalLink className="size-3.5 shrink-0 text-muted-foreground group-hover:text-foreground" />
+      ) : (
+        <Mail className="size-3.5 shrink-0 text-muted-foreground group-hover:text-foreground" />
+      )}
     </a>
   );
 }
 
 export function Contact() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(PUBLIC_EMAIL);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      setCopied(false);
-    }
-  };
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -126,7 +123,7 @@ export function Contact() {
     <Panel id="contact" aria-label="Contact and Social Links">
       <PanelHeader>
         <PanelTitle>
-          <a href="#contact" className="hover:underline">Contact & Connect</a>
+          <a href="#contact" className="hover:underline">Contact</a>
         </PanelTitle>
         <PanelDescription>
           Open to Frontend Developer roles in React and TypeScript
@@ -134,81 +131,22 @@ export function Contact() {
       </PanelHeader>
 
       <PanelContent className="flex flex-col gap-6">
-        {/* Main Email Action Box */}
-        <div className="rounded-xl border border-border/80 bg-card/50 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div className="flex flex-col gap-1.5">
-            <div className="flex items-center gap-2 text-foreground font-semibold text-sm sm:text-base">
-              <Mail className="size-4 text-accent-blue" />
-              <span>Email and WhatsApp</span>
-            </div>
-            <p className="text-xs sm:text-sm text-muted-foreground max-w-md">
-              Email or WhatsApp for a role, a project, or a technical question.
-            </p>
-            <div className="flex flex-wrap items-center gap-2 pt-0.5 text-xs font-mono">
-              <span className="text-foreground font-medium">{PUBLIC_EMAIL}</span>
-              <span className="text-muted-foreground/60">·</span>
-              <span className="text-foreground font-medium">{PUBLIC_WHATSAPP}</span>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-2 shrink-0">
-            <button
-              type="button"
-              onClick={handleCopyEmail}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono border border-border bg-background hover:bg-muted/80 text-foreground transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-accent-blue"
-              title={`Copy ${PUBLIC_EMAIL} to clipboard`}
-            >
-              {copied ? (
-                <>
-                  <Check className="size-3 text-accent-green" />
-                  <span className="text-accent-green font-medium">Copied!</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="size-3 text-muted-foreground" />
-                  <span>Copy</span>
-                </>
-              )}
-            </button>
-
-            <a
-              href={`mailto:${PUBLIC_EMAIL}`}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-foreground text-background hover:bg-foreground/90 transition-colors font-medium cursor-pointer"
-            >
-              <span>Email Me</span>
-              <ExternalLink className="size-3" />
-            </a>
-
-            <a
-              href={PUBLIC_WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono border border-border bg-background hover:bg-muted text-foreground transition-colors font-medium cursor-pointer"
-            >
-              <span>WhatsApp</span>
-              <ExternalLink className="size-3 text-muted-foreground" />
-            </a>
-          </div>
-        </div>
-
-        {/* Social Links Grid */}
         <div className="border-b border-border/60">
-          {SOCIAL_LINKS.map((link) => (
-            <SocialLinkCard key={link.name} link={link} />
+          {CONTACT_LINKS.map((link) => (
+            <ContactLink key={link.name} link={link} />
           ))}
         </div>
 
-        {/* Minimalist MVP Footer inside PanelContent */}
         <footer className="pt-6 pb-2 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-muted-foreground">
           <div className="flex flex-wrap gap-1">
             <span>© {new Date().getFullYear()} Brahmasta Bagus Aryandra.
             </span>
             <span>Old Version:
               <a
-                href={"https://brahmastabagus.github.io"}
+                href={siteConfig.links.oldPortfolio}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-mono text-accent-blue hover:underline"
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-accent-blue hover:underline focus-visible:outline-2 focus-visible:outline-accent-blue"
               >
                 <span>brahmastabagus.github.io</span>
                 <ExternalLink className="size-3 text-muted-foreground" />
@@ -219,7 +157,7 @@ export function Contact() {
           <button
             type="button"
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-accent-blue"
             aria-label="Scroll to top of page"
           >
             <span>Back to Top</span>
