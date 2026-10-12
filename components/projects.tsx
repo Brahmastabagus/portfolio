@@ -46,11 +46,11 @@ const FEATURED_PROJECTS: FeaturedProjectItem[] = [
     period: "March 2025 – Present",
     role: "Frontend Developer (Full-time)",
     description:
-      "Edutech mobile app platform serving 5,000+ users via WebView. Engineered real-time SSE AI chatbot 'Brodi', interactive assessment engines, and high-volume API consumption optimizations.",
+      "Edutech user app delivered in a mobile WebView. Includes the SSE chatbot Brodi, an interactive assessment engine, and a redesign of how the app requests high-traffic APIs.",
     highlights: [
-      "AI Chatbot 'Brodi' with Server-Sent Events (SSE) streaming & contextual memory",
-      "Interactive assessment engine: TOEFL tryouts, live quizzes, charts, and drag-and-drop questions",
-      "API optimization: pagination & selective response fields reducing payload by ~70% and eliminating browser freezes",
+      "AI chatbot Brodi with Server-Sent Events streaming and contextual memory",
+      "Assessment engine for TOEFL tryouts, live quizzes, charts, and drag-and-drop questions",
+      "Pagination and selective response fields on high-traffic API calls",
       "E-course guidelines, assignments per class, tryout certificates, image compression, and push notifications",
     ],
     metrics: [
@@ -119,13 +119,12 @@ const FEATURED_PROJECTS: FeaturedProjectItem[] = [
     period: "February 2023 – July 2023",
     role: "Scrum Master & Fullstack Developer",
     description:
-      "Comprehensive flight ticket booking platform engineered as the final capstone project at Binar Academy Fullstack Web Development (Kampus Merdeka MSIB), achieving a Hard-skill Score of 4.9/5.0 and Chapter Average of 97.",
+      "Flight ticket booking capstone: search, seat selection, booking, and transaction history, backed by an Express API.",
     highlights: [
-      "Led cross-functional team as Scrum Master across multi-repo architecture (Frontend Web, REST API, Android)",
-      "Interactive flight search, real-time seat selection, booking workflows, and transaction history tracking",
-      "Fullstack integration with Express.js REST API, Sequelize ORM, and PostgreSQL database",
+      "Scrum Master across frontend, REST API, and Android repositories",
+      "Flight search, seat selection, booking flow, and transaction history on the web client",
+      "API integration with Express.js, Sequelize, and PostgreSQL",
     ],
-    metrics: ["Hard-skill Score: 4.9 / 5.0", "Chapter Average: 97", "Kampus Merdeka Capstone"],
     technologies: [
       "React",
       "TypeScript",
@@ -202,7 +201,7 @@ const ALL_OTHER_PROJECTS: NotableProject[] = [
     period: "2023 – 2024",
     role: "Researcher & Fullstack Developer",
     description:
-      "Fullstack web portal and published scientific research paper in journal: 'Perancangan Sistem Informasi Desa Wisata Berbasis Website dengan Metode RAD'. Thesis capstone at IT Telkom Purwokerto with GPA 3.95/4.00 Cum Laude Honors.",
+      "Fullstack portal for Desa Wisata Melung, published as 'Perancangan Sistem Informasi Desa Wisata Berbasis Website dengan Metode RAD'.",
     technologies: [
       "React",
       "Vite",
@@ -590,6 +589,7 @@ function SpotlightCard({ project }: { project: FeaturedProjectItem }) {
 
 export function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [showOtherProjects, setShowOtherProjects] = useState(false);
 
   const totalProjectsCount = FEATURED_PROJECTS.length + ALL_OTHER_PROJECTS.length;
 
@@ -627,8 +627,21 @@ export function Projects() {
           </div>
         </div>
 
-        {/* Section 2: All Other Verified Projects (Cleanly Displayed with Filter Pills) */}
-        <div className="flex flex-col gap-4 pt-4 border-t border-border/60">
+        <div className="pt-4 border-t border-border/60">
+          <button
+            type="button"
+            aria-expanded={showOtherProjects}
+            aria-controls="other-projects"
+            onClick={() => setShowOtherProjects((open) => !open)}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono border border-border bg-background hover:bg-muted text-foreground transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-accent-blue"
+          >
+            {showOtherProjects
+              ? "Hide other projects"
+              : `Show ${ALL_OTHER_PROJECTS.length} other projects`}
+          </button>
+
+          {showOtherProjects && (
+          <div id="other-projects" className="flex flex-col gap-4 pt-4">
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
             <div className="flex items-center gap-2 text-xs font-mono font-medium text-foreground uppercase tracking-wider">
               <FolderGit2 className="size-3.5 text-accent-blue" />
@@ -804,6 +817,8 @@ export function Projects() {
               </div>
             ))}
           </div>
+          </div>
+          )}
         </div>
       </PanelContent>
     </Panel>

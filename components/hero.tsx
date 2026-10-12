@@ -41,10 +41,7 @@ export function Hero({ className }: { className?: string }) {
       </div>
 
       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
-        Specializing in building scalable, accessible, and production-ready
-        web applications with React, TypeScript, Redux Toolkit, and modern
-        frontend architectures. Passionate about AI-integrated interfaces and
-        measurable performance optimization.
+        I build production web applications with React, TypeScript, and Redux Toolkit.
       </p>
     </header>
   );

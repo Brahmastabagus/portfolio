@@ -9,7 +9,6 @@ import {
   PanelDescription,
   PanelHeader,
   PanelTitle,
-  PanelTitleSup,
 } from "@/components/panel";
 
 interface EducationItem {
@@ -43,12 +42,7 @@ const EDUCATION_DATA: EducationItem[] = [
         "Engineered fullstack web portal (React + Vite + Express + TailwindCSS) and published academic research paper in journal.",
       repositoryUrl: "https://repository.ittelkom-pwt.ac.id/11356/",
     },
-    highlights: [
-      "Graduated with High Honors (GPA 3.95/4.00) in Computer Software Engineering.",
-      "1st Place Winner — Amikom Student Scientific Fair Web Design Competition (PRIMA 2019).",
-      "2nd Place Winner — Amikom Student Scientific Fair Web Design Competition (PRIMA 2018).",
-      "Active research and practical software development in web engineering methodologies.",
-    ],
+    highlights: [],
     coursework: [
       "Software Engineering",
       "Data Structures & Algorithms",
@@ -66,9 +60,7 @@ const EDUCATION_DATA: EducationItem[] = [
     score: "4.9 / 5.0",
     scoreLabel: "Hard-skill Score",
     highlights: [
-      "Completed intensive 5-month fullstack web engineering curriculum under Kemendikbudristek Kampus Merdeka.",
-      "Chapter Average: 97 / 100 with Soft-skill Score: 4.7 / 5.0.",
-      "Served as Scrum Master & Fullstack Developer on final project 'TerbangIn' flight booking platform.",
+      "Chapter average 97. Soft-skill score 4.7/5.",
     ],
     coursework: [
       "React.js & TypeScript",
@@ -86,7 +78,6 @@ const EDUCATION_DATA: EducationItem[] = [
     highlights: [
       "Early specialization in Software Engineering (Rekayasa Perangkat Lunak).",
       "Solid foundations in algorithm design, object-oriented programming, and web development fundamentals.",
-      "Competed and placed in regional student web design contests.",
     ],
   },
 ];
@@ -104,7 +95,6 @@ export function Education() {
       <PanelHeader>
         <PanelTitle>
           <a href="#education" className="hover:underline">Education</a>
-          <PanelTitleSup>[GPA 3.95]</PanelTitleSup>
         </PanelTitle>
         <PanelDescription>
           Academic degrees, independent study & foundational schooling
@@ -202,19 +192,20 @@ export function Education() {
                         </div>
                       )}
 
-                      {/* Highlights */}
-                      <div className="flex flex-col gap-2">
-                        <span className="text-xs font-mono font-medium text-foreground uppercase tracking-wider">
-                          Key Highlights:
-                        </span>
-                        <ul className="space-y-1.5 list-disc list-inside text-muted-foreground leading-relaxed pl-1 text-xs sm:text-sm">
-                          {edu.highlights.map((highlight, idx) => (
-                            <li key={idx}>
-                              <span className="text-foreground/90">{highlight}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                      {edu.highlights.length > 0 && (
+                        <div className="flex flex-col gap-2">
+                          <span className="text-xs font-mono font-medium text-foreground uppercase tracking-wider">
+                            Key Highlights:
+                          </span>
+                          <ul className="space-y-1.5 list-disc list-inside text-muted-foreground leading-relaxed pl-1 text-xs sm:text-sm">
+                            {edu.highlights.map((highlight, idx) => (
+                              <li key={idx}>
+                                <span className="text-foreground/90">{highlight}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
 
                       {/* Coursework Tags */}
                       {edu.coursework && edu.coursework.length > 0 && (

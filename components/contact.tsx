@@ -129,7 +129,7 @@ export function Contact() {
           <a href="#contact" className="hover:underline">Contact & Connect</a>
         </PanelTitle>
         <PanelDescription>
-          Open for engineering opportunities, collaboration, or technical discussions
+          Open to Frontend Developer roles in React and TypeScript
         </PanelDescription>
       </PanelHeader>
 
@@ -142,7 +142,7 @@ export function Contact() {
               <span>Email and WhatsApp</span>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-md">
-              For an open role, a project inquiry, or a question about frontend architecture.
+              Email or WhatsApp for a role, a project, or a technical question.
             </p>
             <div className="flex flex-wrap items-center gap-2 pt-0.5 text-xs font-mono">
               <span className="text-foreground font-medium">{PUBLIC_EMAIL}</span>

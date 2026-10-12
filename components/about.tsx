@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "motion/react";
+import { motion, useReducedMotion, useScroll, useTransform, MotionValue } from "motion/react";
 import {
   Panel,
   PanelContent,
@@ -14,49 +14,31 @@ interface WordProps {
   children: string;
   progress: MotionValue<number>;
   range: [number, number];
+  reduced: boolean;
 }
 
-function Word({ children, progress, range }: WordProps) {
-  const opacity = useTransform(progress, range, [0.25, 1]);
+function Word({ children, progress, range, reduced }: WordProps) {
+  const opacity = useTransform(progress, range, reduced ? [1, 1] : [0.25, 1]);
 
   return (
-    <span className="relative inline-block mr-1.5">
-      <motion.span style={{ opacity }} className="text-foreground">
-        {children}
-      </motion.span>
-    </span>
+    <motion.span style={reduced ? undefined : { opacity }} className="text-foreground">
+      {`${children} `}
+    </motion.span>
   );
 }
 
 const NARRATIVE_TEXT =
-  "I am a Frontend Developer focused on building scalable, accessible, and high-performance web applications. Currently engineering the edutech platform at Brofesional, delivering features to over 5,000 mobile app users via WebView. My work spans AI-integrated interfaces with Server-Sent Events, deep API performance optimization, and robust state management with React and TypeScript.";
+  "I am a Frontend Developer working in React and TypeScript. At Brofesional I build the user app and the internal dashboard: learning flows, assessments, and the client state behind them.";
 
 export function About() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion() ?? false;
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start 0.85", "start 0.35"],
   });
 
   const words = NARRATIVE_TEXT.split(" ");
-
-  const highlights = [
-    {
-      title: "AI-integrated frontend",
-      description:
-        "Refactored chatbot 'Brodi' with SSE streaming, contextual conversation memory, and interactive UI carousels and tables.",
-    },
-    {
-      title: "Performance optimization",
-      description:
-        "Redesigned high-traffic API usage patterns to achieve ~70% payload reduction and eliminate browser freezes on 1,000+ records.",
-    },
-    {
-      title: "Academic and bootcamp",
-      description:
-        "S1 Computer Software Engineering from IT Telkom Purwokerto (GPA 3.95/4.00) and Binar Academy Fullstack Web Development (Hard-skill 4.9/5).",
-    },
-  ];
 
   return (
     <Panel id="about" aria-label="About Me">
@@ -69,32 +51,25 @@ export function About() {
         </PanelDescription>
       </PanelHeader>
 
-      <PanelContent className="flex flex-col gap-6">
-        {/* Editorial Scroll Reveal Paragraph */}
+      <PanelContent>
         <div ref={containerRef} className="py-2">
           <p className="text-base sm:text-lg font-normal leading-relaxed text-muted-foreground/40">
             {words.map((word, i) => {
               const start = i / words.length;
               const end = start + 1 / words.length;
               return (
-                <Word key={`${word}-${i}`} progress={scrollYProgress} range={[start, end]}>
+                <Word
+                  key={`${word}-${i}`}
+                  progress={scrollYProgress}
+                  range={[start, end]}
+                  reduced={reduced}
+                >
                   {word}
                 </Word>
               );
             })}
           </p>
         </div>
-
-        <ul className="border-t border-border/60">
-          {highlights.map((item) => (
-            <li key={item.title} className="border-b border-border/60 py-3 last:border-b-0">
-              <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
-              <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                {item.description}
-              </p>
-            </li>
-          ))}
-        </ul>
       </PanelContent>
     </Panel>
   );

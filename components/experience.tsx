@@ -36,18 +36,10 @@ const EXPERIENCES: ExperienceItem[] = [
     location: "Yogyakarta, Indonesia · On-site",
     isCurrent: true,
     context:
-      "Edutech platform providing TOEFL preparation, learning materials, and AI-powered learning assistance, serving 5,000+ mobile app users via WebView and internal admin dashboard.",
+      "Edutech platform for TOEFL preparation and learning materials. I work on the user app, shipped in a mobile WebView, and the internal admin dashboard.",
     contributions: [
-      "Refactored AI chatbot 'Brodi' with Server-Sent Events (SSE) response streaming, contextual conversation memory, and interactive UI components (carousels, comparison tables).",
-      "Redesigned high-traffic API usage through pagination and selective response fields, reducing payload size by ~70% and eliminating browser freezes on lists of 1,000+ records.",
-      "Implemented TOEFL tryout flows, live quizzes with review modes, AI-driven question analysis, and an interactive question engine supporting charts, drag-and-drop, and sequential formats.",
-      "Developed learning features including e-course onboarding guidelines, assignments per class, tryout certificates, image compression, and push notifications.",
-      "Built internal dashboard administration modules for data export (vouchers/schedules/scores), tutor management, and referral/coupon workflows.",
-    ],
-    metrics: [
-      "5,000+ WebView users",
-      "~70% API payload reduction",
-      "1,000+ records freeze elimination",
+      "User app: chatbot interface, TOEFL tryouts, live quizzes, class assignments, and certificates.",
+      "Dashboard: tutor management, vouchers, schedules, scores, and data export.",
     ],
     technologies: [
       "React 17",
@@ -81,31 +73,6 @@ const EXPERIENCES: ExperienceItem[] = [
       "Tailwind CSS",
       "JavaScript",
       "Responsive Web Design",
-    ],
-  },
-  {
-    id: "binar",
-    role: "Fullstack Web Development Independent Study",
-    company: "Binar Academy (Kampus Merdeka)",
-    period: "February 2023 – July 2023",
-    type: "Certified Program",
-    location: "Remote",
-    context:
-      "Intensive 5-month fullstack software engineering program under Kampus Merdeka, graduating with Hard-skill Score 4.9/5 and Chapter Average 97.",
-    contributions: [
-      "Served as Scrum Master and Fullstack Developer on final project 'TerbangIn' (flight ticket booking platform).",
-      "Architected responsive web frontend with React, PrimeReact, and Redux Toolkit with end-to-end API integration.",
-      "Collaborated using agile sprints, code reviews, and Git workflow best practices.",
-    ],
-    metrics: ["Hard-skill: 4.9 / 5.0", "Chapter Average: 97"],
-    technologies: [
-      "React",
-      "TypeScript",
-      "Redux Toolkit",
-      "Vite",
-      "PrimeReact",
-      "Express.js",
-      "PostgreSQL",
     ],
   },
   {

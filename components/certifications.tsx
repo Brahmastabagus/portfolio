@@ -63,7 +63,6 @@ const CERTIFICATIONS_DATA: CertificationItem[] = [
     title: "Fullstack Web Development Independent Study",
     issuer: "Binar Academy (Kampus Merdeka)",
     date: "July 2023",
-    credentialId: "Hard-skill Score: 4.9 / 5.0 (Avg 97)",
     category: "Certified Fullstack Program",
     icon: BookCheck,
   },
