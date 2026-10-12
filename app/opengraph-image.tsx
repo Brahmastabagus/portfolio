@@ -100,9 +100,9 @@ export default function Image() {
               margin: 0,
             }}
           >
-            Frontend Developer{" "}
+            {"Frontend Developer at "}
             <span style={{ color: "#a1a1aa", fontWeight: 400 }}>
-              at Brofesional by Youth Educational Centre
+              Brofesional by Youth Educational Centre
             </span>
           </p>
           <p

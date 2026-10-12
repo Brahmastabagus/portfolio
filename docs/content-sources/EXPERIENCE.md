@@ -6,7 +6,7 @@
 
 **Period:** March 2025 – Present
 **Type:** Professional (Full-time)
-**Location:** Purbalingga, Indonesia (On-site)
+**Location:** Yogyakarta, Indonesia (On-site)
 **Work Arrangement:** Edutech platform development
 
 #### Context

@@ -33,7 +33,7 @@ const EXPERIENCES: ExperienceItem[] = [
     company: "Brofesional by Youth Educational Centre",
     period: "March 2025 – Present",
     type: "Full-time",
-    location: "Purbalingga, Indonesia",
+    location: "Yogyakarta, Indonesia · On-site",
     isCurrent: true,
     context:
       "Edutech platform providing TOEFL preparation, learning materials, and AI-powered learning assistance, serving 5,000+ mobile app users via WebView and internal admin dashboard.",
