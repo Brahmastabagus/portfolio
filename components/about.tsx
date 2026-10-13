@@ -18,7 +18,8 @@ interface WordProps {
 }
 
 function Word({ children, progress, range, reduced }: WordProps) {
-  const opacity = useTransform(progress, range, reduced ? [1, 1] : [0.25, 1]);
+  // Resting opacity must stay ≥4.5:1 at 18px. Light needs ~0.56, dark ~0.46.
+  const opacity = useTransform(progress, range, reduced ? [1, 1] : [0.62, 1]);
 
   return (
     <motion.span style={reduced ? undefined : { opacity }} className="text-foreground">
